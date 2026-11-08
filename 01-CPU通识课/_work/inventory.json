@@ -1,0 +1,425 @@
+[
+ {
+  "i": 1,
+  "pian": "CPU概览篇 时代与机遇",
+  "title": "第1节 CPU时代",
+  "start": 10,
+  "end": 20,
+  "chars": 5423,
+  "file": "sec01.txt"
+ },
+ {
+  "i": 2,
+  "pian": "CPU概览篇 时代与机遇",
+  "title": "第2节 CPU性能论",
+  "start": 21,
+  "end": 31,
+  "chars": 6136,
+  "file": "sec02.txt"
+ },
+ {
+  "i": 3,
+  "pian": "CPU概览篇 时代与机遇",
+  "title": "第3节 人人可学CPU",
+  "start": 32,
+  "end": 40,
+  "chars": 3580,
+  "file": "sec03.txt"
+ },
+ {
+  "i": 4,
+  "pian": "CPU术语篇 入门术语应知应会",
+  "title": "第1节 计算机的语言：指令集",
+  "start": 41,
+  "end": 48,
+  "chars": 3848,
+  "file": "sec04.txt"
+ },
+ {
+  "i": 5,
+  "pian": "CPU术语篇 入门术语应知应会",
+  "title": "第2节 繁简之争：精简指令集",
+  "start": 49,
+  "end": 54,
+  "chars": 3136,
+  "file": "sec05.txt"
+ },
+ {
+  "i": 6,
+  "pian": "CPU术语篇 入门术语应知应会",
+  "title": "第3节 第一次抽象：汇编语言",
+  "start": 55,
+  "end": 59,
+  "chars": 2098,
+  "file": "sec06.txt"
+ },
+ {
+  "i": 7,
+  "pian": "CPU术语篇 入门术语应知应会",
+  "title": "第4节 做CPU就是做微结构",
+  "start": 60,
+  "end": 66,
+  "chars": 3149,
+  "file": "sec07.txt"
+ },
+ {
+  "i": 8,
+  "pian": "CPU术语篇 入门术语应知应会",
+  "title": "第5节 解读功耗",
+  "start": 67,
+  "end": 70,
+  "chars": 1896,
+  "file": "sec08.txt"
+ },
+ {
+  "i": 9,
+  "pian": "CPU术语篇 入门术语应知应会",
+  "title": "第6节 摩尔定律传奇",
+  "start": 71,
+  "end": 75,
+  "chars": 3222,
+  "file": "sec09.txt"
+ },
+ {
+  "i": 10,
+  "pian": "CPU术语篇 入门术语应知应会",
+  "title": "第7节 通用还是专用？",
+  "start": 76,
+  "end": 84,
+  "chars": 4440,
+  "file": "sec10.txt"
+ },
+ {
+  "i": 11,
+  "pian": "CPU术语篇 入门术语应知应会",
+  "title": "第8节 飘荡的幽灵：后门和漏洞",
+  "start": 85,
+  "end": 92,
+  "chars": 4917,
+  "file": "sec11.txt"
+ },
+ {
+  "i": 12,
+  "pian": "CPU原理篇 现代高性能CPU架构与技术",
+  "title": "第1节 理论基石",
+  "start": 93,
+  "end": 101,
+  "chars": 4840,
+  "file": "sec12.txt"
+ },
+ {
+  "i": 13,
+  "pian": "CPU原理篇 现代高性能CPU架构与技术",
+  "title": "第2节 EDA神器",
+  "start": 102,
+  "end": 109,
+  "chars": 4243,
+  "file": "sec13.txt"
+ },
+ {
+  "i": 14,
+  "pian": "CPU原理篇 现代高性能CPU架构与技术",
+  "title": "第3节 开天辟地：二进制",
+  "start": 110,
+  "end": 115,
+  "chars": 2879,
+  "file": "sec14.txt"
+ },
+ {
+  "i": 15,
+  "pian": "CPU原理篇 现代高性能CPU架构与技术",
+  "title": "第4节 CPU的天职：数值运算",
+  "start": 116,
+  "end": 120,
+  "chars": 2217,
+  "file": "sec15.txt"
+ },
+ {
+  "i": 16,
+  "pian": "CPU原理篇 现代高性能CPU架构与技术",
+  "title": "第5节 流水线的奥秘",
+  "start": 121,
+  "end": 124,
+  "chars": 2369,
+  "file": "sec16.txt"
+ },
+ {
+  "i": 17,
+  "pian": "CPU原理篇 现代高性能CPU架构与技术",
+  "title": "第6节 乱序执行并不是没有秩序",
+  "start": 125,
+  "end": 134,
+  "chars": 4578,
+  "file": "sec17.txt"
+ },
+ {
+  "i": 18,
+  "pian": "CPU原理篇 现代高性能CPU架构与技术",
+  "title": "第7节 多发射和转移猜测",
+  "start": 135,
+  "end": 138,
+  "chars": 1723,
+  "file": "sec18.txt"
+ },
+ {
+  "i": 19,
+  "pian": "CPU原理篇 现代高性能CPU架构与技术",
+  "title": "第8节 包纳天地的内存",
+  "start": 139,
+  "end": 146,
+  "chars": 4109,
+  "file": "sec19.txt"
+ },
+ {
+  "i": 20,
+  "pian": "CPU原理篇 现代高性能CPU架构与技术",
+  "title": "第9节 CPU的“外交”",
+  "start": 147,
+  "end": 153,
+  "chars": 3022,
+  "file": "sec20.txt"
+ },
+ {
+  "i": 21,
+  "pian": "CPU系统篇 由CPU组成完整计算机",
+  "title": "第1节 操作系统和应用的桥梁",
+  "start": 154,
+  "end": 156,
+  "chars": 1212,
+  "file": "sec21.txt"
+ },
+ {
+  "i": 22,
+  "pian": "CPU系统篇 由CPU组成完整计算机",
+  "title": "第2节 专用指令发挥大作用",
+  "start": 157,
+  "end": 160,
+  "chars": 1769,
+  "file": "sec22.txt"
+ },
+ {
+  "i": 23,
+  "pian": "CPU系统篇 由CPU组成完整计算机",
+  "title": "第3节 虚拟化：逻辑还是物理？",
+  "start": 161,
+  "end": 163,
+  "chars": 1536,
+  "file": "sec23.txt"
+ },
+ {
+  "i": 24,
+  "pian": "CPU系统篇 由CPU组成完整计算机",
+  "title": "第4节 可以信赖的计算",
+  "start": 164,
+  "end": 167,
+  "chars": 1396,
+  "file": "sec24.txt"
+ },
+ {
+  "i": 25,
+  "pian": "CPU系统篇 由CPU组成完整计算机",
+  "title": "第5节 从一个到多个：并行",
+  "start": 168,
+  "end": 173,
+  "chars": 3312,
+  "file": "sec25.txt"
+ },
+ {
+  "i": 26,
+  "pian": "CPU系统篇 由CPU组成完整计算机",
+  "title": "第6节 并行计算机的内存",
+  "start": 174,
+  "end": 178,
+  "chars": 2716,
+  "file": "sec26.txt"
+ },
+ {
+  "i": 27,
+  "pian": "CPU系统篇 由CPU组成完整计算机",
+  "title": "第7节 集大成：从CPU到计算机",
+  "start": 179,
+  "end": 189,
+  "chars": 5662,
+  "file": "sec27.txt"
+ },
+ {
+  "i": 28,
+  "pian": "CPU生产制造篇 从电路设计到硅晶片的实现",
+  "title": "第1节 化设计为实物",
+  "start": 190,
+  "end": 194,
+  "chars": 2571,
+  "file": "sec28.txt"
+ },
+ {
+  "i": 29,
+  "pian": "CPU生产制造篇 从电路设计到硅晶片的实现",
+  "title": "第2节 硅晶片的由来",
+  "start": 195,
+  "end": 200,
+  "chars": 2125,
+  "file": "sec29.txt"
+ },
+ {
+  "i": 30,
+  "pian": "CPU生产制造篇 从电路设计到硅晶片的实现",
+  "title": "第3节 模拟元器件",
+  "start": 201,
+  "end": 206,
+  "chars": 3024,
+  "file": "sec30.txt"
+ },
+ {
+  "i": 31,
+  "pian": "CPU生产制造篇 从电路设计到硅晶片的实现",
+  "title": "第4节 数字元器件",
+  "start": 207,
+  "end": 210,
+  "chars": 1870,
+  "file": "sec31.txt"
+ },
+ {
+  "i": 32,
+  "pian": "CPU生产制造篇 从电路设计到硅晶片的实现",
+  "title": "第5节 交付工厂",
+  "start": 211,
+  "end": 217,
+  "chars": 3413,
+  "file": "sec32.txt"
+ },
+ {
+  "i": 33,
+  "pian": "CPU生产制造篇 从电路设计到硅晶片的实现",
+  "title": "第6节 怎样省钱 做芯片？",
+  "start": 218,
+  "end": 220,
+  "chars": 1720,
+  "file": "sec33.txt"
+ },
+ {
+  "i": 34,
+  "pian": "CPU生产制造篇 从电路设计到硅晶片的实现",
+  "title": "第7节 明天的芯片",
+  "start": 221,
+  "end": 224,
+  "chars": 1192,
+  "file": "sec34.txt"
+ },
+ {
+  "i": 35,
+  "pian": "CPU家族篇 经典CPU企业和型号",
+  "title": "第1节 从上古到战国",
+  "start": 225,
+  "end": 233,
+  "chars": 4664,
+  "file": "sec35.txt"
+ },
+ {
+  "i": 36,
+  "pian": "CPU家族篇 经典CPU企业和型号",
+  "title": "第2节 巨头寻踪",
+  "start": 234,
+  "end": 242,
+  "chars": 5610,
+  "file": "sec36.txt"
+ },
+ {
+  "i": 37,
+  "pian": "CPU家族篇 经典CPU企业和型号",
+  "title": "第3节 小而坚强",
+  "start": 243,
+  "end": 246,
+  "chars": 1876,
+  "file": "sec37.txt"
+ },
+ {
+  "i": 38,
+  "pian": "CPU家族篇 经典CPU企业和型号",
+  "title": "第4节 世界边缘",
+  "start": 247,
+  "end": 251,
+  "chars": 2341,
+  "file": "sec38.txt"
+ },
+ {
+  "i": 39,
+  "pian": "CPU生态篇 解密软件生态",
+  "title": "第1节 生态之重",
+  "start": 252,
+  "end": 257,
+  "chars": 2728,
+  "file": "sec39.txt"
+ },
+ {
+  "i": 40,
+  "pian": "CPU生态篇 解密软件生态",
+  "title": "第2节 开发者的号角",
+  "start": 258,
+  "end": 263,
+  "chars": 2908,
+  "file": "sec40.txt"
+ },
+ {
+  "i": 41,
+  "pian": "CPU生态篇 解密软件生态",
+  "title": "第3节 解决方案如何为王",
+  "start": 264,
+  "end": 267,
+  "chars": 2232,
+  "file": "sec41.txt"
+ },
+ {
+  "i": 42,
+  "pian": "CPU生态篇 解密软件生态",
+  "title": "第4节 生态的优点",
+  "start": 268,
+  "end": 272,
+  "chars": 2736,
+  "file": "sec42.txt"
+ },
+ {
+  "i": 43,
+  "pian": "CPU生态篇 解密软件生态",
+  "title": "第5节 生态的方向",
+  "start": 273,
+  "end": 280,
+  "chars": 3486,
+  "file": "sec43.txt"
+ },
+ {
+  "i": 44,
+  "pian": "中国CPU篇 “技术—市场—技术”的历史循环",
+  "title": "第1节 CPU旧事",
+  "start": 281,
+  "end": 286,
+  "chars": 2742,
+  "file": "sec44.txt"
+ },
+ {
+  "i": 45,
+  "pian": "中国CPU篇 “技术—市场—技术”的历史循环",
+  "title": "第2节 龙的声音",
+  "start": 287,
+  "end": 293,
+  "chars": 3538,
+  "file": "sec45.txt"
+ },
+ {
+  "i": 46,
+  "pian": "中国CPU篇 “技术—市场—技术”的历史循环",
+  "title": "第3节 龙之生态",
+  "start": 294,
+  "end": 301,
+  "chars": 3957,
+  "file": "sec46.txt"
+ },
+ {
+  "i": 47,
+  "pian": "中国CPU篇 “技术—市场—技术”的历史循环",
+  "title": "第4节 未来已来",
+  "start": 302,
+  "end": 307,
+  "chars": 2821,
+  "file": "sec47.txt"
+ }
+]

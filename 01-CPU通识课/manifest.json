@@ -1,0 +1,5635 @@
+{
+ "slug": "cpu-tongshi",
+ "title": "CPU 通识课",
+ "subtitle": "从一块硅片到一整套生态：零基础学透 CPU",
+ "book": {
+  "title": "CPU 通识课",
+  "author": "靳国杰、张戈",
+  "source": [
+   "CPU通识课.pdf（310 页）"
+  ]
+ },
+ "audience": "零基础",
+ "goal": "读完能看懂 CPU 的关键参数、说清从指令到芯片的完整链路、理解生态与自主路线的产业逻辑",
+ "companion": "cpu-tongshi-companion.html",
+ "learningPath": [
+  {
+   "step": "01",
+   "title": "概览篇：CPU 是什么",
+   "chapterIds": [
+    "ch01",
+    "ch02",
+    "ch03"
+   ],
+   "checkpoint": "该篇各章自测题正确率 ≥ 80%"
+  },
+  {
+   "step": "02",
+   "title": "术语篇：CPU 的语汇",
+   "chapterIds": [
+    "ch04",
+    "ch05",
+    "ch06",
+    "ch07",
+    "ch08",
+    "ch09",
+    "ch10"
+   ],
+   "checkpoint": "该篇各章自测题正确率 ≥ 80%"
+  },
+  {
+   "step": "03",
+   "title": "原理篇：CPU 怎么算",
+   "chapterIds": [
+    "ch11",
+    "ch12",
+    "ch13",
+    "ch14",
+    "ch15",
+    "ch16",
+    "ch17",
+    "ch18"
+   ],
+   "checkpoint": "该篇各章自测题正确率 ≥ 80%"
+  },
+  {
+   "step": "04",
+   "title": "系统篇：CPU 与外部世界",
+   "chapterIds": [
+    "ch19",
+    "ch20",
+    "ch21",
+    "ch22",
+    "ch23"
+   ],
+   "checkpoint": "该篇各章自测题正确率 ≥ 80%"
+  },
+  {
+   "step": "05",
+   "title": "生产制造篇：从设计到实物",
+   "chapterIds": [
+    "ch24",
+    "ch25",
+    "ch26",
+    "ch27",
+    "ch28"
+   ],
+   "checkpoint": "该篇各章自测题正确率 ≥ 80%"
+  },
+  {
+   "step": "06",
+   "title": "家族篇：厂商与架构的兴衰",
+   "chapterIds": [
+    "ch29",
+    "ch30",
+    "ch31"
+   ],
+   "checkpoint": "该篇各章自测题正确率 ≥ 80%"
+  },
+  {
+   "step": "07",
+   "title": "生态篇：为什么生态比芯片难",
+   "chapterIds": [
+    "ch32",
+    "ch33",
+    "ch34"
+   ],
+   "checkpoint": "该篇各章自测题正确率 ≥ 80%"
+  },
+  {
+   "step": "08",
+   "title": "中国 CPU 篇：自主路线",
+   "chapterIds": [
+    "ch35",
+    "ch36",
+    "ch37",
+    "ch38"
+   ],
+   "checkpoint": "该篇各章自测题正确率 ≥ 80%"
+  }
+ ],
+ "chapters": [
+  {
+   "id": "ch01",
+   "title": "第 1 章：CPU 是什么，为什么它是信息社会的基石",
+   "file": "chapters/c01-cpu-shenme.md",
+   "difficulty": 1,
+   "hours": 0.5,
+   "prerequisite": "无",
+   "core": "CPU 是运算器加控制器。程序是指令序列，存在存储器里，CPU 一条条取出来执行，所以换程序就能换功能，不用改电路。",
+   "objectives": [
+    "能说出 CPU 由哪两个部件合并而成，以及它在五大部件里的位置",
+    "能按冯·诺依曼模型，把\"取指—执行—写回\"这条循环讲一遍",
+    "能举出通用 CPU 与专用 CPU 各两个例子"
+   ]
+  },
+  {
+   "id": "ch02",
+   "title": "第 2 章：怎么衡量一颗 CPU 的好坏",
+   "file": "chapters/c02-cpu-xingneng.md",
+   "difficulty": 2,
+   "hours": 0.7,
+   "prerequisite": "第 1 章",
+   "core": "性能是\"多快把问题算完\"，不是\"时钟敲得多快\"。主频、每周期干的活、并行度，三者乘起来才是吞吐。",
+   "objectives": [
+    "能说清\"性能 = 单位时间完成的计算量\"，并据此解释为什么主频不是唯一因素",
+    "能举出 MIPS/MFLOPS 失效的原因",
+    "能说明 SPEC CPU 测的是什么，以及它被\"跑分\"利用的两种方式"
+   ]
+  },
+  {
+   "id": "ch03",
+   "title": "第 3 章：普通人也能学懂 CPU",
+   "file": "chapters/c03-renren-ke-xue.md",
+   "difficulty": 1,
+   "hours": 0.4,
+   "prerequisite": "第 1、2 章",
+   "core": "CPU 的外形从占满机柜变成几毫米的模块，原理却一脉相承。学它不是为了造它，是为了拿到理解整个计算机系统最底层的那把钥匙。",
+   "objectives": [
+    "能用三代机器的数字说明 CPU 这七十年变的是什么、没变的是什么",
+    "能说出推动 CPU 发展的三股力量",
+    "能解释\"制作计算机 = 做 CPU + 做操作系统\"这句话"
+   ]
+  },
+  {
+   "id": "ch04",
+   "title": "第 4 章：指令集——计算机的语言",
+   "file": "chapters/c04-zhilingji.md",
+   "difficulty": 2,
+   "hours": 0.8,
+   "prerequisite": "第 1 章",
+   "core": "指令集是软件和硬件之间的编码约定。它写出来只要几个月，但要让全世界为它写软件，要很多年。",
+   "objectives": [
+    "能定义指令集，并说明它为什么同时是\"标准规范\"和\"生态入口\"",
+    "能解释\"增量演进、向下兼容\"具体约束了什么",
+    "能用 IA64 与 AMD64 的竞争说明兼容性的市场后果"
+   ]
+  },
+  {
+   "id": "ch05",
+   "title": "第 5 章：精简指令集与汇编语言",
+   "file": "chapters/c05-risc-huibian.md",
+   "difficulty": 2,
+   "hours": 0.8,
+   "prerequisite": "第 4 章",
+   "core": "指令不是越多越好。常用指令占两成却承担八成执行，剩下的复杂指令增加设计负担，还挡住流水线。",
+   "objectives": [
+    "能说清 CISC 为什么越来越臃肿，RISC 又为什么回来",
+    "能解释\"CISC = 预译码 + RISC\"是什么意思",
+    "能说明汇编语言和高级语言各自省掉了什么麻烦"
+   ]
+  },
+  {
+   "id": "ch06",
+   "title": "第 6 章：做 CPU 就是做微结构",
+   "file": "chapters/c06-weijiegou.md",
+   "difficulty": 2,
+   "hours": 0.6,
+   "prerequisite": "第 4、5 章",
+   "core": "指令集是地基，微结构是图纸和施工，IP 核是可以复用的预制构件。买房和买房图纸，不是一回事。",
+   "objectives": [
+    "能区分指令集和微结构：一个是规范，一个是电路实现",
+    "能说明同一个微结构怎样衍生成不同型号的 CPU",
+    "能解释 IP 核的软硬两种形态，以及\"SoC 攒芯片\"的局限"
+   ]
+  },
+  {
+   "id": "ch07",
+   "title": "第 7 章：功耗从哪里来",
+   "file": "chapters/c07-gonghao.md",
+   "difficulty": 2,
+   "hours": 0.5,
+   "prerequisite": "第 1 章",
+   "core": "功耗是电流通过晶体管时变成的热。降功耗有三条路：换工艺、让操作系统管电源、按负载调频率电压。工艺买得到，设计买不到。",
+   "objectives": [
+    "能按场景说出四类 CPU 的典型功耗区间",
+    "能列出降低功耗的三条路径，并说明哪条最依赖设计",
+    "能解释\"低功耗\"为什么不只是省电费"
+   ]
+  },
+  {
+   "id": "ch08",
+   "title": "第 8 章：摩尔定律与它的黄昏",
+   "file": "chapters/c08-moer.md",
+   "difficulty": 2,
+   "hours": 0.6,
+   "prerequisite": "第 2、7 章",
+   "core": "摩尔定律不是物理定律，是一条被人努力维持了半个多世纪的经验曲线。曲线还在，但斜率在变小。",
+   "objectives": [
+    "能说出摩尔定律的原始表述与 1975 年的修正",
+    "能解释 Tick-Tock 为什么把工艺和架构分开做，以及后来为什么变成三步",
+    "能列出 CPU 性能提升变慢的三个原因"
+   ]
+  },
+  {
+   "id": "ch09",
+   "title": "第 9 章：通用还是专用",
+   "file": "chapters/c09-tongyong-zhuanyong.md",
+   "difficulty": 2,
+   "hours": 0.6,
+   "prerequisite": "第 1、5 章",
+   "core": "通用 CPU 什么都能干，但什么都不最快。把常见的大块计算交给专用电路，剩下的调度交回 CPU，整机就快了。",
+   "objectives": [
+    "能说清异构计算的两个基本思想",
+    "能举例说明专用处理器为什么快",
+    "能解释 big.little 的思路与适用场景"
+   ]
+  },
+  {
+   "id": "ch10",
+   "title": "第 10 章：后门与漏洞——芯片里的幽灵",
+   "file": "chapters/c10-houmen-loudong.md",
+   "difficulty": 3,
+   "hours": 0.8,
+   "prerequisite": "第 4、5 章",
+   "core": "后门是有人故意留的门，漏洞是没人发现的门缝。前者靠制度和自律，后者只能靠设计与验证，而且永远清不干净。",
+   "objectives": [
+    "能区分后门与漏洞：一个是态度问题，一个是能力问题",
+    "能说出 Meltdown/Spectre 利用了哪些常见优化机制",
+    "能解释打补丁为什么必然掉性能，以及为什么自主设计是必要的"
+   ]
+  },
+  {
+   "id": "ch11",
+   "title": "第 11 章：理论基石——布尔代数与数字电路",
+   "file": "chapters/c11-lilun-jishi.md",
+   "difficulty": 2,
+   "hours": 0.7,
+   "prerequisite": "第 4、5 章",
+   "core": "CPU 是数学、电子、计算机科学三股绳拧出来的。设计它的难，不在单个模块，在模块之间那张网。",
+   "objectives": [
+    "能说出支撑 CPU 的三门基础理论",
+    "能列出 CPU 研制团队里至少六个岗位，并说出各自产出什么",
+    "能解释为什么电路设计比软件编程更难"
+   ]
+  },
+  {
+   "id": "ch12",
+   "title": "第 12 章：EDA——在电脑里先把 CPU 造一遍",
+   "file": "chapters/c12-eda.md",
+   "difficulty": 2,
+   "hours": 0.6,
+   "prerequisite": "第 11 章",
+   "core": "EDA 是芯片的设计软件。你用 Verilog 写\"要什么功能\"，它帮你算\"怎么摆晶体管\"。",
+   "objectives": [
+    "能说出 EDA 的两大功能",
+    "能走通 RTL → 逻辑综合 → 门级网表 → 版图这条链",
+    "能区分前端设计与后端设计"
+   ]
+  },
+  {
+   "id": "ch13",
+   "title": "第 13 章：二进制——从开关到数字",
+   "file": "chapters/c13-erjinzhi.md",
+   "difficulty": 2,
+   "hours": 0.8,
+   "prerequisite": "无（本章可独立读）",
+   "core": "0/1 不是抽象符号，是晶体管导通与截止。补码让减法变成加法，浮点数让小数点的位置可以浮动。",
+   "objectives": [
+    "能用 CMOS 晶体管解释 0/1 的物理来源",
+    "能用\"字符表 + 权重\"说明任意进制，并会做十进制转二进制",
+    "能解释补码为什么让 CPU 只需要加法器",
+    "能说出 IEEE 754 浮点数存了哪两部分"
+   ]
+  },
+  {
+   "id": "ch14",
+   "title": "第 14 章：CPU 的天职——数值运算",
+   "file": "chapters/c14-shuzhi-yunsuan.md",
+   "difficulty": 2,
+   "hours": 0.6,
+   "prerequisite": "第 13 章",
+   "core": "CPU 的算力起点是一个能做\"1+1\"的电路。把它串起来、并起来、加快起来，就有了现代 CPU。",
+   "objectives": [
+    "能说明 1 位加法器怎样串成 32 位加法器",
+    "能列出 ALU 的四类常见功能",
+    "能区分数数据寄存器、指令寄存器、地址寄存器、标志位寄存器",
+    "能解释\"CPU 是多少位\"指的是什么"
+   ]
+  },
+  {
+   "id": "ch15",
+   "title": "第 15 章：流水线的奥秘",
+   "file": "chapters/c15-liushuixian.md",
+   "difficulty": 3,
+   "hours": 0.7,
+   "prerequisite": "第 14 章",
+   "core": "流水线是把一条指令切成几段，让不同段同时处理不同指令。切得越细主频越高，但段间的开销也越大。",
+   "objectives": [
+    "能画出四级流水线，并说明为什么两条指令只要 5 拍而不是 8 拍",
+    "能列出流水线级数增加的好处与代价",
+    "能用 Pentium 4 的例子说明\"主频不等于性能\""
+   ]
+  },
+  {
+   "id": "ch16",
+   "title": "第 16 章：乱序执行与多发射——把流水线喂饱",
+   "file": "chapters/c16-luanxu-duofa.md",
+   "difficulty": 3,
+   "hours": 0.9,
+   "prerequisite": "第 15 章",
+   "core": "乱序执行的秩序是：乱着做，按原顺序交账。保留站负责乱，ROB 负责收，重命名寄存器负责中间账。",
+   "objectives": [
+    "能区分数据相关与结构相关，并说明它们为什么让流水线停顿",
+    "能用保留站、重命名寄存器、ROB 三个部件解释乱序执行",
+    "能解释多发射与转移猜测各自解决什么问题"
+   ]
+  },
+  {
+   "id": "ch17",
+   "title": "第 17 章：内存、缓存与虚拟内存",
+   "file": "chapters/c17-neicun-huancun.md",
+   "difficulty": 2,
+   "hours": 0.7,
+   "prerequisite": "第 14 章",
+   "core": "CPU 太快，内存太慢，缓存是中间那张小桌子。虚拟内存是给每个程序发一张\"看起来连续\"的地图。",
+   "objectives": [
+    "能说明访存指令（LD/ST）做了什么",
+    "能解释缓存为什么有效：数据局部性",
+    "能说清多级缓存的取舍，以及虚拟内存的分段与分页差别"
+   ]
+  },
+  {
+   "id": "ch18",
+   "title": "第 18 章：CPU 的\"外交\"——特权级、中断与 I/O",
+   "file": "chapters/c18-waijiao.md",
+   "difficulty": 2,
+   "hours": 0.6,
+   "prerequisite": "第 17 章",
+   "core": "CPU 只管算，外设的事靠三条通道接进来：总线搬数据、中断报消息、DMA 让数据自己走。",
+   "objectives": [
+    "能解释特权级怎样隔开操作系统与应用程序",
+    "能分清中断与例外的触发源",
+    "能说明 DMA 为什么比直接 I/O 高效"
+   ]
+  },
+  {
+   "id": "ch19",
+   "title": "第 19 章：系统调用——应用与操作系统之间的桥",
+   "file": "chapters/c19-xitong-diaoyong.md",
+   "difficulty": 2,
+   "hours": 0.5,
+   "prerequisite": "第 18 章",
+   "core": "应用只能在自己的院子里活动，想看墙外的信息，得走系统调用这道门，门卫是操作系统。",
+   "objectives": [
+    "能写出\"应用程序 = 指令序列 + 库函数 + 系统调用\"这个等式并解释每一项",
+    "能说明系统调用为什么必须切换特权级",
+    "能区分库函数与系统调用"
+   ]
+  },
+  {
+   "id": "ch20",
+   "title": "第 20 章：专用指令——向量与加密",
+   "file": "chapters/c20-zhuanyong-zhiling.md",
+   "difficulty": 2,
+   "hours": 0.5,
+   "prerequisite": "第 14、15 章",
+   "core": "一条指令算一组数据叫标量，算多组叫向量。把重复的活打包进一条指令，就是拿面积换时间。",
+   "objectives": [
+    "能用 ADDV.W 说明向量指令如何一条算四组",
+    "能举例说出向量指令的适用场景",
+    "能说明硬件加密相对软件加密的两点优势"
+   ]
+  },
+  {
+   "id": "ch21",
+   "title": "第 21 章：虚拟化与可信计算——一台机器当几台用，也只信该信的",
+   "file": "chapters/c21-xunihua-kexin.md",
+   "difficulty": 3,
+   "hours": 0.7,
+   "prerequisite": "第 18、19 章",
+   "core": "虚拟化是把资源切成几份分给不同系统，可信计算是给每个部件验明正身。一个管\"怎么分\"，一个管\"信不信\"。",
+   "objectives": [
+    "能说明虚拟化把一台机器变成多台逻辑机器的机制与用途",
+    "能解释硬件虚拟化为什么能让虚拟机跑出接近物理机的性能",
+    "能对比\"老三样\"与可信计算的思路差别"
+   ]
+  },
+  {
+   "id": "ch22",
+   "title": "第 22 章：并行——多核、多路、多线程与 Amdahl 定律",
+   "file": "chapters/c22-bingxing.md",
+   "difficulty": 3,
+   "hours": 0.8,
+   "prerequisite": "第 15、16 章",
+   "core": "横向加计算单元比纵向冲主频容易，但加速比有天花板——串行那一段决定了上限。",
+   "objectives": [
+    "能区分多核、多路、硬件多线程三个层次的并行",
+    "能用 Amdahl 定律算出加速比上限",
+    "能说清 SMP 与 NUMA 的差别，以及弱一致性为什么被普遍采用"
+   ]
+  },
+  {
+   "id": "ch23",
+   "title": "第 23 章：从 CPU 到计算机——总线、主板与 BIOS",
+   "file": "chapters/c23-zongxian-zhuban.md",
+   "difficulty": 2,
+   "hours": 0.7,
+   "prerequisite": "第 18、19 章",
+   "core": "CPU 只是大脑。总线是神经，桥片是副官，主板是躯干，BIOS 是开机后跑的第一段代码。",
+   "objectives": [
+    "能说清系统总线与外设总线的分工，以及桥片的作用",
+    "能说出主板的两种 CPU 安装方式与印制电路板的基本构成",
+    "能按顺序复述\"敲一下键\"在计算机内部走过的 11 步"
+   ]
+  },
+  {
+   "id": "ch24",
+   "title": "第 24 章：化设计为实物——设计公司与流片厂",
+   "file": "chapters/c24-sheji-shiti.md",
+   "difficulty": 2,
+   "hours": 0.5,
+   "prerequisite": "第 12 章",
+   "core": "大多数芯片公司只出图纸，不出芯片。图纸叫版图，交货的动作叫流片。",
+   "objectives": [
+    "能解释 Fabless 模式：设计公司做什么、代工厂做什么",
+    "能说清\"流片\"这个词的来源",
+    "能准确说出纳米工艺指的是哪一段尺寸"
+   ]
+  },
+  {
+   "id": "ch25",
+   "title": "第 25 章：从沙子到晶圆",
+   "file": "chapters/c25-guiyuanpian.md",
+   "difficulty": 2,
+   "hours": 0.7,
+   "prerequisite": "第 24 章",
+   "core": "芯片的原料是沙子。把它提纯、切片、一层层刻蚀掺杂，三个月后它变成一颗会算数的东西。",
+   "objectives": [
+    "能说明硅为什么成为芯片首选材料",
+    "能按顺序复述晶圆制造的主要步骤",
+    "能用\"生长、挖掉、掺杂\"三种手法概括所有工序"
+   ]
+  },
+  {
+   "id": "ch26",
+   "title": "第 26 章：模拟与数字元器件——世界只有几种积木",
+   "file": "chapters/c26-monishuzi-qijian.md",
+   "difficulty": 2,
+   "hours": 0.7,
+   "prerequisite": "第 13 章",
+   "core": "无论多复杂的电路，积木只有不到十种。复杂来自组合方式，不来自零件数量。",
+   "objectives": [
+    "能说出模拟电路六大基础器件与各自的用途",
+    "能用 PN 结解释二极管的单向导电",
+    "能说明 CMOS 反相器如何由一对互补晶体管构成",
+    "能区分组合电路与时序电路"
+   ]
+  },
+  {
+   "id": "ch27",
+   "title": "第 27 章：版图、制造设备与成本",
+   "file": "chapters/c27-banTu-chengben.md",
+   "difficulty": 2,
+   "hours": 0.6,
+   "prerequisite": "第 24、25 章",
+   "core": "版图是设计的终点、制造的起点。它由色块叠成，靠光刻机印出来，最后由成本公式定价。",
+   "objectives": [
+    "能说明版图里有什么、单元库有什么用",
+    "能说出光刻机与晶圆代工的产业格局",
+    "能拆开 CPU 成本的三项构成，并解释成品率与销量的影响"
+   ]
+  },
+  {
+   "id": "ch28",
+   "title": "第 28 章：不流片也能做 CPU——FPGA 与模拟器",
+   "file": "chapters/c28-fpga-moniqi.md",
+   "difficulty": 2,
+   "hours": 0.5,
+   "prerequisite": "第 24 章",
+   "core": "想验证 CPU，不一定要花上千万流片。FPGA 是租来的硬件，模拟器是免费的软件，代价都是慢。",
+   "objectives": [
+    "能说明 FPGA 为什么能\"烧写\"成 CPU",
+    "能比较 FPGA、模拟器、流片三种验证方式的速度与成本",
+    "能说出 SOI 与 FinFET 各解决了什么问题"
+   ]
+  },
+  {
+   "id": "ch29",
+   "title": "第 29 章：从上古到战国——CPU 家族简史",
+   "file": "chapters/c29-cpu-jianshi.md",
+   "difficulty": 2,
+   "hours": 0.6,
+   "prerequisite": "第 4 章",
+   "core": "1971 年之前，CPU 只是整机的一部分；1971 年之后，CPU 成了有型号、有品牌的独立商品。这条分界线是 Intel 4004。",
+   "objectives": [
+    "能定义 CPU 的\"上古时代\"与\"战国时代\"",
+    "能举出四款 20 世纪 70 年代的经典 8 位处理器",
+    "能说出几个曾经辉煌、如今退场的 CPU 品牌及其原因"
+   ]
+  },
+  {
+   "id": "ch30",
+   "title": "第 30 章：巨头寻踪——Intel、AMD、ARM、苹果、IBM",
+   "file": "chapters/c30-jutou-xunzong.md",
+   "difficulty": 2,
+   "hours": 0.7,
+   "prerequisite": "第 29 章",
+   "core": "Intel 赢在生态，不在性能。ARM 赢在开放，不在算力。AMD 赢在敢跟，苹果赢在敢自己来。",
+   "objectives": [
+    "能说明 Intel 成功的真正原因不在性能领先",
+    "能说出 AMD 与 Intel 竞争的两大法宝与两次逆转",
+    "能解释 ARM 的授权模式为何能建成第二套生态"
+   ]
+  },
+  {
+   "id": "ch31",
+   "title": "第 31 章：小而坚强与世界边缘——MIPS、RISC-V 与各国 CPU 之路",
+   "file": "chapters/c31-mips-riscv-shijie.md",
+   "difficulty": 2,
+   "hours": 0.6,
+   "prerequisite": "第 30 章",
+   "core": "MIPS 输给了生态，RISC-V 想用开放换生态。日本输给了授权，因为它只做产品、不做标准。",
+   "objectives": [
+    "能说出 MIPS 的两大贡献与衰落原因",
+    "能解释 RISC-V 的开放理念和它面对的碎片化难题",
+    "能用日本的教训说明\"制造不等于掌握生态\""
+   ]
+  },
+  {
+   "id": "ch32",
+   "title": "第 32 章：生态之重——CPU 的价值不在 CPU",
+   "file": "chapters/c32-shengtai-zhizhong.md",
+   "difficulty": 2,
+   "hours": 0.6,
+   "prerequisite": "第 4、19 章",
+   "core": "CPU 是土，软件生态是森林。土本身不能吃，能长出什么才值钱。",
+   "objectives": [
+    "能定义 CPU 生态与软件生态，并说明二者的关系",
+    "能说出 CPU 与应用之间的三种接口",
+    "能用 Inside / Outside 模型解释 CPU 企业的两个使命"
+   ]
+  },
+  {
+   "id": "ch33",
+   "title": "第 33 章：开发者的号角与解决方案为王",
+   "file": "chapters/c33-kaifazhe-fangan.md",
+   "difficulty": 2,
+   "hours": 0.7,
+   "prerequisite": "第 32 章",
+   "core": "写代码的人决定生态有没有内容，做解决方案的人决定钱怎么分。",
+   "objectives": [
+    "能区分系统软件开发者与应用软件开发者，说出中国开发者结构的特点",
+    "能说明 Linux 发行版是怎么\"做\"出来的",
+    "能用虚拟机的机制解释\"脱离指令集的生态\"",
+    "能用利润率数字说明\"解决方案为王\""
+   ]
+  },
+  {
+   "id": "ch34",
+   "title": "第 34 章：生态的优点与方向——开放、兼容、优化",
+   "file": "chapters/c34-shengtai-fangxiang.md",
+   "difficulty": 2,
+   "hours": 0.7,
+   "prerequisite": "第 33 章",
+   "core": "开放把力量聚起来，兼容把成果留住，优化把体验拉高。三条缺一条，生态就会散。",
+   "objectives": [
+    "能说出优秀生态的三个原则及各自作用",
+    "能用 Linux 的碎片化说明\"开放而不兼容\"的代价",
+    "能用\"标准—品牌—产品\"三档解释 CPU 企业的营利模式"
+   ]
+  },
+  {
+   "id": "ch35",
+   "title": "第 35 章：中国 CPU 旧事——为什么必须自己做",
+   "file": "chapters/c35-zhongguo-cpu-jiushi.md",
+   "difficulty": 2,
+   "hours": 0.6,
+   "prerequisite": "第 30、31 章",
+   "core": "CPU 是所有信息设备的底座。底座买别人的，利润、安全、话语权就都在别人手里。",
+   "objectives": [
+    "能说出中国做 CPU 的三条理由与市场规模数据",
+    "能比较\"市场换技术\"与\"市场带技术\"两条路线",
+    "能概括中国计算机事业的三个阶段"
+   ]
+  },
+  {
+   "id": "ch36",
+   "title": "第 36 章：龙的声音——龙芯的两个十年与三条原则",
+   "file": "chapters/c36-long-shengyin.md",
+   "difficulty": 2,
+   "hours": 0.7,
+   "prerequisite": "第 35 章",
+   "core": "龙芯的第一个十年证明\"能做\"，第二个十年证明\"能用\"。转折点是从追单项指标，转向追用户感受。",
+   "objectives": [
+    "能说清龙芯两个十年各自的任务",
+    "能说出龙芯 1/2/3 号系列的定位差别",
+    "能复述从学院派转向做产品后的三条设计原则"
+   ]
+  },
+  {
+   "id": "ch37",
+   "title": "第 37 章：龙之生态——试错、LoongArch 与内生安全",
+   "file": "chapters/c37-long-shengtai.md",
+   "difficulty": 3,
+   "hours": 0.7,
+   "prerequisite": "第 32、36 章",
+   "core": "核心技术难在细节不在原理，所以只能靠时间试错。指令集是生态的户口本，没有它就只能当租客。",
+   "objectives": [
+    "能用高复杂系统的两个难点解释\"试错不可绕过\"",
+    "能说明 LoongArch 为什么是自主生态的根基",
+    "能列出龙芯内生安全的四类机制"
+   ]
+  },
+  {
+   "id": "ch38",
+   "title": "第 38 章：未来已来——泛生态六支柱与多条路线",
+   "file": "chapters/c38-weilai-yilai.md",
+   "difficulty": 2,
+   "hours": 0.5,
+   "prerequisite": "第 34、37 章",
+   "core": "把技术链打通只是第一步，真正的门槛是把生态链打通——标准、软件、方案、认证、人才、书籍，六根柱子缺一根都会漏风。",
+   "objectives": [
+    "能列出龙芯泛生态的六个支柱",
+    "能说出\"从零开始造计算机\"的教育思路",
+    "能比较中国 CPU 企业的两条路线与代表产品"
+   ]
+  }
+ ],
+ "concepts": [
+  {
+   "id": "c-isa",
+   "title": "指令集（ISA）",
+   "file": "concepts/isa.md",
+   "chapterIds": [
+    "ch04",
+    "ch05",
+    "ch06",
+    "ch37"
+   ]
+  },
+  {
+   "id": "c-uarch",
+   "title": "微结构",
+   "file": "concepts/microarchitecture.md",
+   "chapterIds": [
+    "ch06",
+    "ch15",
+    "ch16"
+   ]
+  },
+  {
+   "id": "c-pipeline",
+   "title": "流水线",
+   "file": "concepts/pipeline.md",
+   "chapterIds": [
+    "ch15",
+    "ch16"
+   ]
+  },
+  {
+   "id": "c-cache",
+   "title": "缓存与存储层次",
+   "file": "concepts/cache.md",
+   "chapterIds": [
+    "ch17"
+   ]
+  },
+  {
+   "id": "c-syscall",
+   "title": "系统调用",
+   "file": "concepts/system-call.md",
+   "chapterIds": [
+    "ch18",
+    "ch19"
+   ]
+  },
+  {
+   "id": "c-perf",
+   "title": "性能度量",
+   "file": "concepts/performance.md",
+   "chapterIds": [
+    "ch02",
+    "ch36"
+   ]
+  },
+  {
+   "id": "c-eco",
+   "title": "软件生态",
+   "file": "concepts/ecology.md",
+   "chapterIds": [
+    "ch32",
+    "ch33",
+    "ch34"
+   ]
+  },
+  {
+   "id": "c-ownisa",
+   "title": "自主指令集",
+   "file": "concepts/autonomous-isa.md",
+   "chapterIds": [
+    "ch04",
+    "ch37",
+    "ch38"
+   ]
+  }
+ ],
+ "glossary": [
+  {
+   "term": "CPU",
+   "def": "中央处理器，运算器与控制器的合称，负责指挥整机并执行运算",
+   "chapterId": "ch01"
+  },
+  {
+   "term": "专用 CPU",
+   "def": "面向单一应用场景设计的处理器，可牺牲通用性换取性能、成本或功耗优势",
+   "chapterId": "ch01"
+  },
+  {
+   "term": "主频",
+   "def": "时钟模块每秒发出节拍的次数，决定 CPU 的工作节奏",
+   "chapterId": "ch01"
+  },
+  {
+   "term": "冯·诺依曼体系结构",
+   "def": "程序和数据都存于存储器、由控制器逐条取指执行的计算机模型",
+   "chapterId": "ch01"
+  },
+  {
+   "term": "指令",
+   "def": "CPU 能识别并执行的一项基本操作，以二进制编码存在存储器中",
+   "chapterId": "ch01"
+  },
+  {
+   "term": "MIPS",
+   "def": "每秒执行百万条指令数，早期性能指标",
+   "chapterId": "ch02"
+  },
+  {
+   "term": "SPEC CPU",
+   "def": "面向真实应用的性能测试套件，以运行时间衡量",
+   "chapterId": "ch02"
+  },
+  {
+   "term": "吞吐",
+   "def": "单位时间内完成的有效计算量，性能的实质",
+   "chapterId": "ch02"
+  },
+  {
+   "term": "编译器优化",
+   "def": "把高级语言转成更高效机器码的手段，会显著影响跑分",
+   "chapterId": "ch02"
+  },
+  {
+   "term": "体系结构",
+   "def": "规定指令集、寄存器、存储与 IO 组织方式的计算机抽象层",
+   "chapterId": "ch03"
+  },
+  {
+   "term": "制程（工艺节点）",
+   "def": "制造中晶体管的最小特征尺寸，如 10μm、7nm",
+   "chapterId": "ch03"
+  },
+  {
+   "term": "开源 CPU",
+   "def": "设计源码公开、可复用的处理器核",
+   "chapterId": "ch03"
+  },
+  {
+   "term": "流片",
+   "def": "把设计送去晶圆厂试产，第一次做出实物芯片",
+   "chapterId": "ch03"
+  },
+  {
+   "term": "集成电路",
+   "def": "把大量晶体管与连线做在同一块半导体衬底上的电路",
+   "chapterId": "ch03"
+  },
+  {
+   "term": "二进制翻译",
+   "def": "把一种指令集的机器码转换成另一种指令集可执行形式的技术",
+   "chapterId": "ch04"
+  },
+  {
+   "term": "兼容机",
+   "def": "遵循同一指令集、可运行相同软件的计算机",
+   "chapterId": "ch04"
+  },
+  {
+   "term": "向下兼容",
+   "def": "新机器能运行旧机器上的软件",
+   "chapterId": "ch04"
+  },
+  {
+   "term": "指令集授权",
+   "def": "指令集权利人许可他人生产兼容 CPU 的商业模式",
+   "chapterId": "ch04"
+  },
+  {
+   "term": "指令集（ISA）",
+   "def": "CPU 能识别的指令编码规范，软硬件接口",
+   "chapterId": "ch04"
+  },
+  {
+   "term": "CISC",
+   "def": "复杂指令集计算机，指令多、长度可变",
+   "chapterId": "ch05"
+  },
+  {
+   "term": "RISC",
+   "def": "精简指令集计算机，指令少、长度统一、便于流水",
+   "chapterId": "ch05"
+  },
+  {
+   "term": "微指令（μOP）",
+   "def": "CISC 内部译码产生的 RISC 风格操作",
+   "chapterId": "ch05"
+  },
+  {
+   "term": "正交性",
+   "def": "指令之间功能不重复、可组合覆盖全部需求的性质",
+   "chapterId": "ch05"
+  },
+  {
+   "term": "汇编器",
+   "def": "把汇编语言转成机器码的程序",
+   "chapterId": "ch05"
+  },
+  {
+   "term": "编译器",
+   "def": "把高级语言源码转成机器码的程序",
+   "chapterId": "ch05"
+  },
+  {
+   "term": "IP 核",
+   "def": "可复用的电路设计模块",
+   "chapterId": "ch06"
+  },
+  {
+   "term": "SoC",
+   "def": "片上系统，一块芯片集成 CPU 与多种功能模块",
+   "chapterId": "ch06"
+  },
+  {
+   "term": "处理器核",
+   "def": "CPU 中负责运算与控制的完整单元",
+   "chapterId": "ch06"
+  },
+  {
+   "term": "微结构",
+   "def": "一条指令集在电路上的具体实现方案",
+   "chapterId": "ch06"
+  },
+  {
+   "term": "硬 IP",
+   "def": "已完成布局布线、可直接流片的 IP",
+   "chapterId": "ch06"
+  },
+  {
+   "term": "软 IP",
+   "def": "以 HDL 描述交付、尚未布局布线的 IP",
+   "chapterId": "ch06"
+  },
+  {
+   "term": "功耗",
+   "def": "单位时间消耗的电能，单位瓦特",
+   "chapterId": "ch07"
+  },
+  {
+   "term": "功耗密度",
+   "def": "单位面积上的发热量，决定散热设计难度",
+   "chapterId": "ch07"
+  },
+  {
+   "term": "无风扇设计",
+   "def": "靠被动散热把整机做到静音的方案",
+   "chapterId": "ch07"
+  },
+  {
+   "term": "电源管理",
+   "def": "操作系统按状态关闭或降低部件供电的机制",
+   "chapterId": "ch07"
+  },
+  {
+   "term": "睿频",
+   "def": "根据负载动态调整频率（及电压）的机制",
+   "chapterId": "ch07"
+  },
+  {
+   "term": "Tick-Tock",
+   "def": "工艺与架构交替升级的两年周期策略",
+   "chapterId": "ch08"
+  },
+  {
+   "term": "制程",
+   "def": "制造工艺节点，如 14nm、10nm、7nm",
+   "chapterId": "ch08"
+  },
+  {
+   "term": "性能过剩",
+   "def": "算力超出多数用户实际需求的状态",
+   "chapterId": "ch08"
+  },
+  {
+   "term": "挤牙膏",
+   "def": "形容性能提升幅度很小的代际更新",
+   "chapterId": "ch08"
+  },
+  {
+   "term": "摩尔定律",
+   "def": "集成电路晶体管数量约每两年翻倍的产业经验规律",
+   "chapterId": "ch08"
+  },
+  {
+   "term": "GPU",
+   "def": "图形处理器，擅长批量并行的像素与浮点运算",
+   "chapterId": "ch09"
+  },
+  {
+   "term": "NPU",
+   "def": "神经网络处理器，专门加速 AI 推理",
+   "chapterId": "ch09"
+  },
+  {
+   "term": "big.little",
+   "def": "同芯片内集成高性能核与低功耗核的调度架构",
+   "chapterId": "ch09"
+  },
+  {
+   "term": "协处理器",
+   "def": "辅助 CPU 完成特定功能的专用处理器",
+   "chapterId": "ch09"
+  },
+  {
+   "term": "异构计算",
+   "def": "多种架构的计算单元协同完成任务的模式",
+   "chapterId": "ch09"
+  },
+  {
+   "term": "CVE",
+   "def": "国际通用的漏洞编号与披露体系",
+   "chapterId": "ch10"
+  },
+  {
+   "term": "侧信道",
+   "def": "通过缓存、时序等间接信息推断数据的攻击方式",
+   "chapterId": "ch10"
+  },
+  {
+   "term": "后门",
+   "def": "设计者有意保留、未公开的绕过安全机制的通道",
+   "chapterId": "ch10"
+  },
+  {
+   "term": "漏洞",
+   "def": "设计中可被利用的缺陷",
+   "chapterId": "ch10"
+  },
+  {
+   "term": "补丁",
+   "def": "在软件层绕开硬件漏洞的修复手段",
+   "chapterId": "ch10"
+  },
+  {
+   "term": "全定制设计",
+   "def": "手工排布每个晶体管的高性能实现方式",
+   "chapterId": "ch11"
+  },
+  {
+   "term": "可测性设计（DFT）",
+   "def": "为测试与调试增加专用电路接口的设计方法",
+   "chapterId": "ch11"
+  },
+  {
+   "term": "布尔代数",
+   "def": "研究二进制逻辑表示与运算的数学理论",
+   "chapterId": "ch11"
+  },
+  {
+   "term": "物理设计",
+   "def": "确定器件位置、连线并输出工艺版图的设计阶段",
+   "chapterId": "ch11"
+  },
+  {
+   "term": "硬件描述语言",
+   "def": "描述数字电路功能与结构的文本语言",
+   "chapterId": "ch11"
+  },
+  {
+   "term": "EDA",
+   "def": "电子设计自动化，芯片设计与验证软件",
+   "chapterId": "ch12"
+  },
+  {
+   "term": "RTL",
+   "def": "寄存器传输级，Verilog 描述的抽象电路模型",
+   "chapterId": "ch12"
+  },
+  {
+   "term": "仿真",
+   "def": "用软件模拟电路运行以验证功能",
+   "chapterId": "ch12"
+  },
+  {
+   "term": "版图",
+   "def": "含器件位置与连线的物理设计成果",
+   "chapterId": "ch12"
+  },
+  {
+   "term": "网表",
+   "def": "门单元及其连接关系的描述",
+   "chapterId": "ch12"
+  },
+  {
+   "term": "逻辑综合",
+   "def": "把 RTL 转成门级网表的过程",
+   "chapterId": "ch12"
+  },
+  {
+   "term": "CMOS",
+   "def": "互补金属氧化物半导体，CPU 的基础器件",
+   "chapterId": "ch13"
+  },
+  {
+   "term": "IEEE 754",
+   "def": "国际通用的浮点数表示标准",
+   "chapterId": "ch13"
+  },
+  {
+   "term": "反相器",
+   "def": "输出与输入相反的基本门电路",
+   "chapterId": "ch13"
+  },
+  {
+   "term": "定点数",
+   "def": "小数点位置固定的表示方式",
+   "chapterId": "ch13"
+  },
+  {
+   "term": "浮点数",
+   "def": "按科学计数法存储底数与指数的表示方式",
+   "chapterId": "ch13"
+  },
+  {
+   "term": "补码",
+   "def": "让符号位与数值位统一运算的编码方式",
+   "chapterId": "ch13"
+  },
+  {
+   "term": "ALU",
+   "def": "算术逻辑单元，执行多种运算的部件",
+   "chapterId": "ch14"
+  },
+  {
+   "term": "加法器",
+   "def": "实现二进制加法的电路，多位由 1 位串联而成",
+   "chapterId": "ch14"
+  },
+  {
+   "term": "寄存器",
+   "def": "CPU 内部的小容量高速存储单元",
+   "chapterId": "ch14"
+  },
+  {
+   "term": "寄存器堆",
+   "def": "一组寄存器构成的模块，带地址与读写端口",
+   "chapterId": "ch14"
+  },
+  {
+   "term": "溢出",
+   "def": "运算结果超出寄存器位宽所能表示的范围",
+   "chapterId": "ch14"
+  },
+  {
+   "term": "程序计数器（PC）",
+   "def": "保存下一条指令地址的寄存器",
+   "chapterId": "ch14"
+  },
+  {
+   "term": "吞吐率",
+   "def": "单位时间内完成的指令数量",
+   "chapterId": "ch15"
+  },
+  {
+   "term": "段间寄存器",
+   "def": "保存上一段结果、供下一段读取的寄存器",
+   "chapterId": "ch15"
+  },
+  {
+   "term": "流水级",
+   "def": "流水线中的一段，由独立电路模块承担",
+   "chapterId": "ch15"
+  },
+  {
+   "term": "流水线",
+   "def": "把指令执行切分为多段并叠加处理的结构",
+   "chapterId": "ch15"
+  },
+  {
+   "term": "BTB",
+   "def": "分支目标缓冲器，记录分支历史目标地址的预测部件",
+   "chapterId": "ch16"
+  },
+  {
+   "term": "ROB",
+   "def": "重排序缓存，按原序提交并处理例外的部件",
+   "chapterId": "ch16"
+  },
+  {
+   "term": "保留站",
+   "def": "暂存待执行指令、按操作数就绪情况发射的单元",
+   "chapterId": "ch16"
+  },
+  {
+   "term": "寄存器重命名",
+   "def": "用内部寄存器副本消除假依赖的机制",
+   "chapterId": "ch16"
+  },
+  {
+   "term": "数据相关",
+   "def": "指令间因读写同一数据形成的依赖",
+   "chapterId": "ch16"
+  },
+  {
+   "term": "结构相关",
+   "def": "多条指令争用同一硬件部件形成的冲突",
+   "chapterId": "ch16"
+  },
+  {
+   "term": "TLB",
+   "def": "地址转换后备缓冲器，缓存虚拟地址到物理地址的映射",
+   "chapterId": "ch17"
+  },
+  {
+   "term": "尾端",
+   "def": "多字节数据在寄存器中的排列顺序",
+   "chapterId": "ch17"
+  },
+  {
+   "term": "数据局部性",
+   "def": "访问集中在少量地址且反复使用的规律",
+   "chapterId": "ch17"
+  },
+  {
+   "term": "缓存",
+   "def": "CPU 与内存之间的小容量高速存储",
+   "chapterId": "ch17"
+  },
+  {
+   "term": "虚拟内存",
+   "def": "操作系统为程序提供的抽象地址空间",
+   "chapterId": "ch17"
+  },
+  {
+   "term": "访存指令",
+   "def": "读写内存的指令，如 LD、ST",
+   "chapterId": "ch17"
+  },
+  {
+   "term": "DMA",
+   "def": "直接存储器访问，外设与内存之间不经济 CPU 的数据传输方式",
+   "chapterId": "ch18"
+  },
+  {
+   "term": "中断",
+   "def": "外部事件触发 CPU 暂停当前流程的机制",
+   "chapterId": "ch18"
+  },
+  {
+   "term": "例外",
+   "def": "指令执行异常触发的处理机制",
+   "chapterId": "ch18"
+  },
+  {
+   "term": "特权指令",
+   "def": "只允许操作系统执行的指令",
+   "chapterId": "ch18"
+  },
+  {
+   "term": "特权级",
+   "def": "CPU 为隔离资源而设置的运行权限等级",
+   "chapterId": "ch18"
+  },
+  {
+   "term": "库函数",
+   "def": "语言层面封装、在应用态执行的功能模块",
+   "chapterId": "ch19"
+  },
+  {
+   "term": "特权级切换",
+   "def": "CPU 从应用级进入操作系统级（或反向）的过程",
+   "chapterId": "ch19"
+  },
+  {
+   "term": "系统调用",
+   "def": "操作系统提供给应用的高权限功能接口",
+   "chapterId": "ch19"
+  },
+  {
+   "term": "系统调用列表",
+   "def": "操作系统规定的可调用服务清单",
+   "chapterId": "ch19"
+  },
+  {
+   "term": "内生安全",
+   "def": "安全能力内建于硬件、不依赖外挂软件的安全形态",
+   "chapterId": "ch20"
+  },
+  {
+   "term": "向量寄存器",
+   "def": "保存多个数据元素的宽寄存器",
+   "chapterId": "ch20"
+  },
+  {
+   "term": "向量指令",
+   "def": "一条指令同时计算多组操作数的指令",
+   "chapterId": "ch20"
+  },
+  {
+   "term": "国密算法",
+   "def": "SM1、SM2、SM3、SM4 等自主密码算法",
+   "chapterId": "ch20"
+  },
+  {
+   "term": "标量",
+   "def": "一组操作数只含单个数值的运算形式",
+   "chapterId": "ch20"
+  },
+  {
+   "term": "TCM",
+   "def": "可信密码模块，提供度量与校验所需的密码功能",
+   "chapterId": "ch21"
+  },
+  {
+   "term": "TPCM",
+   "def": "可信平台控制模块，独立于 CPU 的可信根",
+   "chapterId": "ch21"
+  },
+  {
+   "term": "可信计算",
+   "def": "以度量与校验保证部件未被篡改的安全机制",
+   "chapterId": "ch21"
+  },
+  {
+   "term": "硬件虚拟化",
+   "def": "CPU 提供机制以高效运行多个操作系统的能力",
+   "chapterId": "ch21"
+  },
+  {
+   "term": "虚拟化",
+   "def": "把一台物理机抽象为多台逻辑机的技术",
+   "chapterId": "ch21"
+  },
+  {
+   "term": "虚拟机",
+   "def": "虚拟化产生的逻辑计算机",
+   "chapterId": "ch21"
+  },
+  {
+   "term": "Amdahl 定律",
+   "def": "并行加速比受串行比例限制的定量规律",
+   "chapterId": "ch22"
+  },
+  {
+   "term": "NUMA",
+   "def": "非统一内存访问，本地与远程访问速度不同",
+   "chapterId": "ch22"
+  },
+  {
+   "term": "SMP",
+   "def": "对称多处理，所有 CPU 等速访问所有内存",
+   "chapterId": "ch22"
+  },
+  {
+   "term": "SMT",
+   "def": "同时多线程，一个核支持多套硬件线程环境",
+   "chapterId": "ch22"
+  },
+  {
+   "term": "原子指令",
+   "def": "保证一段操作不被其他核打断的指令",
+   "chapterId": "ch22"
+  },
+  {
+   "term": "多核",
+   "def": "单芯片集成多个独立处理器核",
+   "chapterId": "ch22"
+  },
+  {
+   "term": "多路",
+   "def": "主板上安装多个独立 CPU 芯片",
+   "chapterId": "ch22"
+  },
+  {
+   "term": "BGA",
+   "def": "球栅阵列封装，以焊球作为引脚",
+   "chapterId": "ch23"
+  },
+  {
+   "term": "BIOS",
+   "def": "基本输入输出系统，开机最先运行的固件",
+   "chapterId": "ch23"
+  },
+  {
+   "term": "LGA",
+   "def": "栅格阵列封装，以触点与扣架连接",
+   "chapterId": "ch23"
+  },
+  {
+   "term": "PCB",
+   "def": "印制电路板，承载并连接电子元器件的基板",
+   "chapterId": "ch23"
+  },
+  {
+   "term": "固件",
+   "def": "嵌入硬件中的软件程序",
+   "chapterId": "ch23"
+  },
+  {
+   "term": "总线",
+   "def": "计算机模块之间的通信线路",
+   "chapterId": "ch23"
+  },
+  {
+   "term": "桥片",
+   "def": "连接 CPU 与外设、承担外设管理的外围芯片",
+   "chapterId": "ch23"
+  },
+  {
+   "term": "Fabless",
+   "def": "无晶圆厂 IC 设计公司",
+   "chapterId": "ch24"
+  },
+  {
+   "term": "晶圆代工",
+   "def": "专门为设计公司制造芯片的商业模式",
+   "chapterId": "ch24"
+  },
+  {
+   "term": "栅极",
+   "def": "控制源漏之间通断的晶体管引脚",
+   "chapterId": "ch24"
+  },
+  {
+   "term": "流片（tapeout）",
+   "def": "把版图交付工厂投产的过程",
+   "chapterId": "ch24"
+  },
+  {
+   "term": "版图（GDS2）",
+   "def": "含全部晶体管与连线的物理设计文件",
+   "chapterId": "ch24"
+  },
+  {
+   "term": "纳米工艺",
+   "def": "以栅极沟道最小宽度标称的工艺节点",
+   "chapterId": "ch24"
+  },
+  {
+   "term": "die",
+   "def": "晶圆切割后含完整电路的单颗晶片",
+   "chapterId": "ch25"
+  },
+  {
+   "term": "光刻胶",
+   "def": "受光照后性质改变、用于定义图形的涂层",
+   "chapterId": "ch25"
+  },
+  {
+   "term": "掩膜版",
+   "def": "带电路图形的透光模板",
+   "chapterId": "ch25"
+  },
+  {
+   "term": "晶圆",
+   "def": "由硅锭切出的圆形硅片",
+   "chapterId": "ch25"
+  },
+  {
+   "term": "电子级硅（EGS）",
+   "def": "可用于半导体制造的高纯度硅",
+   "chapterId": "ch25"
+  },
+  {
+   "term": "硅锭",
+   "def": "熔炼拉制成的圆柱形硅晶体",
+   "chapterId": "ch25"
+  },
+  {
+   "term": "离子注入",
+   "def": "把杂质离子打入硅中以改变导电性",
+   "chapterId": "ch25"
+  },
+  {
+   "term": "蚀刻",
+   "def": "用化学方式去除指定区域材料的工艺",
+   "chapterId": "ch25"
+  },
+  {
+   "term": "FET",
+   "def": "场效应管，以电场控制通断的三端器件",
+   "chapterId": "ch26"
+  },
+  {
+   "term": "PN 结",
+   "def": "P 型与 N 型半导体交界形成的单向导电结构",
+   "chapterId": "ch26"
+  },
+  {
+   "term": "时序电路",
+   "def": "带记忆、输出依赖内部状态的数字电路",
+   "chapterId": "ch26"
+  },
+  {
+   "term": "电容",
+   "def": "存储电荷的元件，通交流阻直流",
+   "chapterId": "ch26"
+  },
+  {
+   "term": "电感",
+   "def": "把电能转为磁能存储的元件",
+   "chapterId": "ch26"
+  },
+  {
+   "term": "电阻",
+   "def": "限制电流的元件",
+   "chapterId": "ch26"
+  },
+  {
+   "term": "代工厂",
+   "def": "为设计公司提供晶圆制造服务的企业",
+   "chapterId": "ch27"
+  },
+  {
+   "term": "光刻机",
+   "def": "把掩膜图形投影到晶圆上的核心设备",
+   "chapterId": "ch27"
+  },
+  {
+   "term": "单元库",
+   "def": "可复用的标准电路模块集合",
+   "chapterId": "ch27"
+  },
+  {
+   "term": "成品率",
+   "def": "扣除次品后良品所占比例",
+   "chapterId": "ch27"
+  },
+  {
+   "term": "测试向量",
+   "def": "用于检验芯片功能的测试输入集合",
+   "chapterId": "ch27"
+  },
+  {
+   "term": "FPGA",
+   "def": "可反复编程配置的电路器件",
+   "chapterId": "ch28"
+  },
+  {
+   "term": "FinFET",
+   "def": "栅极三面包围沟道的 3D 晶体管",
+   "chapterId": "ch28"
+  },
+  {
+   "term": "GAA",
+   "def": "全环绕栅极晶体管，FinFET 的后继结构",
+   "chapterId": "ch28"
+  },
+  {
+   "term": "SOI",
+   "def": "绝缘体上硅，以埋氧层抑制漏电的工艺",
+   "chapterId": "ch28"
+  },
+  {
+   "term": "模拟器",
+   "def": "用软件模拟硬件行为的程序",
+   "chapterId": "ch28"
+  },
+  {
+   "term": "上古时代",
+   "def": "CPU 由整机厂自研自用、未独立销售的时期",
+   "chapterId": "ch29"
+  },
+  {
+   "term": "单板机",
+   "def": "把 CPU、内存、I/O 集成在一块板上的微型计算机",
+   "chapterId": "ch29"
+  },
+  {
+   "term": "战国时代",
+   "def": "1971 年后多家 CPU 厂商并存的时期",
+   "chapterId": "ch29"
+  },
+  {
+   "term": "第二套生态",
+   "def": "相对 x86 而言、以 ARM 为核心的软硬件体系",
+   "chapterId": "ch29"
+  },
+  {
+   "term": "终端",
+   "def": "与人交互的输入输出设备部分",
+   "chapterId": "ch29"
+  },
+  {
+   "term": "IP 授权",
+   "def": "把指令集或核设计许可给他人生产芯片的模式",
+   "chapterId": "ch30"
+  },
+  {
+   "term": "Win32 API",
+   "def": "Windows 提供给应用的编程接口",
+   "chapterId": "ch30"
+  },
+  {
+   "term": "Wintel 联盟",
+   "def": "x86 与 Windows 组成的产业组合",
+   "chapterId": "ch30"
+  },
+  {
+   "term": "真双核",
+   "def": "两个完整核集成于一个 die，区别于双 die 封装",
+   "chapterId": "ch30"
+  },
+  {
+   "term": "EPI",
+   "def": "欧洲处理器计划",
+   "chapterId": "ch31"
+  },
+  {
+   "term": "RISC-V",
+   "def": "伯克利发起的开放指令集架构",
+   "chapterId": "ch31"
+  },
+  {
+   "term": "TRON",
+   "def": "日本 1984 年启动的自主信息产业体系项目",
+   "chapterId": "ch31"
+  },
+  {
+   "term": "碎片化",
+   "def": "同一架构因扩展不一导致软件难以通用的问题",
+   "chapterId": "ch31"
+  },
+  {
+   "term": "API",
+   "def": "应用编程接口，语言与函数库层面的调用规范",
+   "chapterId": "ch32"
+  },
+  {
+   "term": "CPU 生态",
+   "def": "围绕某 CPU 的全部资源与产业集合",
+   "chapterId": "ch32"
+  },
+  {
+   "term": "Inside/Outside",
+   "def": "芯片内核心与芯片外生态的二分模型",
+   "chapterId": "ch32"
+  },
+  {
+   "term": "软件生态",
+   "def": "某 CPU 可运行的全部软件集合",
+   "chapterId": "ch32"
+  },
+  {
+   "term": "发行版",
+   "def": "把大量源码编译打包成的 Linux 成品",
+   "chapterId": "ch33"
+  },
+  {
+   "term": "本地编译型语言",
+   "def": "编译成可执行文件后运行的语言",
+   "chapterId": "ch33"
+  },
+  {
+   "term": "系统软件开发者",
+   "def": "开发操作系统与 API 的人员",
+   "chapterId": "ch33"
+  },
+  {
+   "term": "虚拟机型语言",
+   "def": "由虚拟机动态翻译执行的语言",
+   "chapterId": "ch33"
+  },
+  {
+   "term": "解决方案",
+   "def": "面向某类需求的整体软硬件平台",
+   "chapterId": "ch33"
+  },
+  {
+   "term": "标准规范",
+   "def": "定义产品间接口、约束兼容的规则集合",
+   "chapterId": "ch34"
+  },
+  {
+   "term": "泛生态",
+   "def": "解决方案之外的标准、社区、认证、人才、出版等支撑体系",
+   "chapterId": "ch34"
+  },
+  {
+   "term": "生态税",
+   "def": "平台从开发者收益中抽取分成",
+   "chapterId": "ch34"
+  },
+  {
+   "term": "109 丙",
+   "def": "中国早期自主研制的大型晶体管计算机",
+   "chapterId": "ch35"
+  },
+  {
+   "term": "市场带技术",
+   "def": "以自研与市场牵引共同推动技术进步的路线",
+   "chapterId": "ch35"
+  },
+  {
+   "term": "市场换技术",
+   "def": "以市场开放换取国外技术引进的路线",
+   "chapterId": "ch35"
+  },
+  {
+   "term": "缺芯少魂",
+   "def": "核心芯片与操作系统均依赖国外的状态",
+   "chapterId": "ch35"
+  },
+  {
+   "term": "GS464v",
+   "def": "龙芯 3A4000 采用的新一代处理器核代号",
+   "chapterId": "ch36"
+  },
+  {
+   "term": "学院派思维",
+   "def": "以单一学术指标衡量产品的思路",
+   "chapterId": "ch36"
+  },
+  {
+   "term": "性能补课",
+   "def": "把单核与通用处理能力补到国际主流水平",
+   "chapterId": "ch36"
+  },
+  {
+   "term": "LVZ / LBT / LSX / LASX",
+   "def": "虚拟化、二进制翻译、向量、高级向量扩展",
+   "chapterId": "ch37"
+  },
+  {
+   "term": "LoongArch",
+   "def": "龙芯自主设计的指令集架构",
+   "chapterId": "ch37"
+  },
+  {
+   "term": "Loongnix",
+   "def": "龙芯社区版操作系统发行版",
+   "chapterId": "ch37"
+  },
+  {
+   "term": "高复杂系统",
+   "def": "因素众多、子系统强耦合、难以分治的系统",
+   "chapterId": "ch37"
+  },
+  {
+   "term": "GS132 / GS232",
+   "def": "向高校开源的龙芯 CPU 核",
+   "chapterId": "ch38"
+  },
+  {
+   "term": "应用迁移",
+   "def": "把既有应用系统适配到新平台的工作",
+   "chapterId": "ch38"
+  },
+  {
+   "term": "生态适配服务产业联盟",
+   "def": "统一兼容性测试与认证的产业组织",
+   "chapterId": "ch38"
+  }
+ ],
+ "patterns": {
+  "file": "patterns.md"
+ },
+ "cheatsheet": {
+  "file": "cheatsheet.md"
+ },
+ "quizzes": [
+  {
+   "id": "q01-1",
+   "chapterId": "ch01",
+   "type": "single",
+   "question": "CPU 由哪两部分合并而成？",
+   "options": [
+    "运算器和控制器",
+    "存储器和运算器",
+    "控制器和输入设备"
+   ],
+   "answer": 0,
+   "explain": "教材把运算器与控制器合称 CPU，存储器与输入输出设备是另外的部件。"
+  },
+  {
+   "id": "q01-2",
+   "chapterId": "ch01",
+   "type": "single",
+   "question": "冯·诺依曼体系结构最关键的思想是？",
+   "options": [
+    "程序和数据都放在存储器里",
+    "用继电器代替电子管",
+    "用多核提高主频"
+   ],
+   "answer": 0,
+   "explain": "\"存储程序\"让机器自动逐条执行，不再依赖人工操作。"
+  },
+  {
+   "id": "q01-3",
+   "chapterId": "ch01",
+   "type": "single",
+   "question": "下列哪个最可能是专用 CPU？",
+   "options": [
+    "服务器里的通用处理器",
+    "智能门锁里管刷卡和蓝牙的低功耗芯片",
+    "台式机 CPU"
+   ],
+   "answer": 1,
+   "explain": "专用 CPU 面向单一场景设计，可以砍掉与该场景无关的功能。"
+  },
+  {
+   "id": "q02-1",
+   "chapterId": "ch02",
+   "type": "single",
+   "question": "为什么主频不能无限提高？",
+   "options": [
+    "因为数据通路和运算都有延迟，周期短于一条指令的最短执行时间就会失控",
+    "因为厂商不愿意",
+    "因为散热片不够大"
+   ],
+   "answer": 0,
+   "explain": "主频上限由电路时延决定，工艺进步才能把它推高。"
+  },
+  {
+   "id": "q02-2",
+   "chapterId": "ch02",
+   "type": "single",
+   "question": "MIPS 指标的根本缺陷是？",
+   "options": [
+    "不同机器一条指令代表的工作量不同",
+    "数值太大不好记",
+    "只适用于手机"
+   ],
+   "answer": 0,
+   "explain": "指令语义强度不同，数指令条数没有可比性。"
+  },
+  {
+   "id": "q02-3",
+   "chapterId": "ch02",
+   "type": "single",
+   "question": "SPEC CPU 测试的本质是？",
+   "options": [
+    "测硬件和软件联合运行真实程序的时间",
+    "测晶体管数量",
+    "测主频"
+   ],
+   "answer": 0,
+   "explain": "它用真实应用掐时间，所以结果同时受编译器、操作系统影响。"
+  },
+  {
+   "id": "q02-4",
+   "chapterId": "ch02",
+   "type": "single",
+   "question": "UnixBench 不适合当标准的主要原因是？",
+   "options": [
+    "测试项老旧，与当前硬件结构脱节",
+    "收费太贵",
+    "只支持 Windows"
+   ],
+   "answer": 0,
+   "explain": "Dhrystone/Whetstone 和 x11perf 都代表不了现代 CPU 的实际负载。"
+  },
+  {
+   "id": "q03-1",
+   "chapterId": "ch03",
+   "type": "single",
+   "question": "Intel 4004 的意义是？",
+   "options": [
+    "第一款商用微处理器，把 CPU 做进一块芯片",
+    "第一台电子计算机",
+    "第一个开源 CPU"
+   ],
+   "answer": 0,
+   "explain": "1971 年发布，2250 个晶体管，开启 PC 时代。"
+  },
+  {
+   "id": "q03-2",
+   "chapterId": "ch03",
+   "type": "single",
+   "question": "\"制作计算机 = 做 CPU + 做操作系统\"强调的是？",
+   "options": [
+    "两者是构成一台可用计算机的核心，其余多是应用",
+    "只要会写应用就行",
+    "操作系统不重要"
+   ],
+   "answer": 0,
+   "explain": "CPU 是心、操作系统是魂，缺一不可。"
+  },
+  {
+   "id": "q03-3",
+   "chapterId": "ch03",
+   "type": "single",
+   "question": "当前开源 CPU 的整体状况是？",
+   "options": [
+    "以入门级、嵌入式为主，活跃度有限",
+    "已经能替代高端商用 CPU",
+    "完全空白"
+   ],
+   "answer": 0,
+   "explain": "受开发成本与知识产权限制，开源硬件远不如开源软件成熟。"
+  },
+  {
+   "id": "q04-1",
+   "chapterId": "ch04",
+   "type": "single",
+   "question": "指令集的本质是？",
+   "options": [
+    "软件与硬件之间的二进制编码规范",
+    "一种电路布局",
+    "一种编程语言"
+   ],
+   "answer": 0,
+   "explain": "它规定 CPU 能识别哪些编码，是软硬件的接口。"
+  },
+  {
+   "id": "q04-2",
+   "chapterId": "ch04",
+   "type": "single",
+   "question": "\"增量演进、向下兼容\"的含义是？",
+   "options": [
+    "只增加新指令，不删除、不改变已有指令",
+    "每隔几年推翻重来",
+    "只兼容自家软件"
+   ],
+   "answer": 0,
+   "explain": "这样旧软件在新 CPU 上仍可运行，软件资产得以继承。"
+  },
+  {
+   "id": "q04-3",
+   "chapterId": "ch04",
+   "type": "single",
+   "question": "IA64 失败的直接原因是？",
+   "options": [
+    "不兼容 32 位 x86，而 AMD64 向下兼容",
+    "性能太差",
+    "价格太高"
+   ],
+   "answer": 0,
+   "explain": "市场不愿放弃既有软件，兼容性成为决定性因素。"
+  },
+  {
+   "id": "q04-4",
+   "chapterId": "ch04",
+   "type": "single",
+   "question": "新指令集难在哪里？",
+   "options": [
+    "难在建立软件生态，而非写出规范",
+    "难在申请专利",
+    "难在取名字"
+   ],
+   "answer": 0,
+   "explain": "没有软件就没有用户，没有用户就没人写软件，双向悖论最难破。"
+  },
+  {
+   "id": "q05-1",
+   "chapterId": "ch05",
+   "type": "single",
+   "question": "RISC 提出的统计依据是？",
+   "options": [
+    "两成常用指令承担八成执行次数",
+    "指令越少越好",
+    "寄存器越多越好"
+   ],
+   "answer": 0,
+   "explain": "二八原则说明复杂指令的实际使用率很低。"
+  },
+  {
+   "id": "q05-2",
+   "chapterId": "ch05",
+   "type": "single",
+   "question": "\"CISC = 预译码 + RISC\"描述的是？",
+   "options": [
+    "CISC 指令在内部被译成 RISC 风格微指令再流水执行",
+    "CISC 被 RISC 取代",
+    "两种指令集合并"
+   ],
+   "answer": 0,
+   "explain": "对外保持兼容，对内用 RISC 结构跑，兼顾生态与性能。"
+  },
+  {
+   "id": "q05-3",
+   "chapterId": "ch05",
+   "type": "single",
+   "question": "高级语言相对汇编的主要优势不包括？",
+   "options": [
+    "可以直接操作 CPU 内部寄存器",
+    "代码量约为汇编的七分之一",
+    "换平台只需重新编译"
+   ],
+   "answer": 0,
+   "explain": "直接操作寄存器恰恰是汇编的专长，高级语言做不到。"
+  },
+  {
+   "id": "q05-4",
+   "chapterId": "ch05",
+   "type": "single",
+   "question": "汇编语言仍被使用的原因？",
+   "options": [
+    "内核驱动等需访问硬件，以及关键代码的性能优化",
+    "因为编译器不存在",
+    "因为汇编更简单"
+   ],
+   "answer": 0,
+   "explain": "两类场景高级语言覆盖不了。"
+  },
+  {
+   "id": "q06-1",
+   "chapterId": "ch06",
+   "type": "single",
+   "question": "微结构与指令集的关系是？",
+   "options": [
+    "微结构是某指令集的电路实现方案",
+    "两者是同一个东西",
+    "微结构是软件规范"
+   ],
+   "answer": 0,
+   "explain": "指令集是规范，微结构是硬件实现。"
+  },
+  {
+   "id": "q06-2",
+   "chapterId": "ch06",
+   "type": "single",
+   "question": "下列哪项不是同一微结构衍生型号的手段？",
+   "options": [
+    "重新设计一套指令集",
+    "调整缓存大小与核数",
+    "换制造工艺"
+   ],
+   "answer": 0,
+   "explain": "换指令集就是另一个产品线了，不属于同微结构衍生。"
+  },
+  {
+   "id": "q06-3",
+   "chapterId": "ch06",
+   "type": "single",
+   "question": "软 IP 与硬 IP 的区别是？",
+   "options": [
+    "软 IP 是功能描述，硬 IP 是确定的版图",
+    "软 IP 更贵",
+    "硬 IP 不能流片"
+   ],
+   "answer": 0,
+   "explain": "软 IP 相当源码，硬 IP 相当可交付的版图。"
+  },
+  {
+   "id": "q06-4",
+   "chapterId": "ch06",
+   "type": "single",
+   "question": "\"买 IP 攒芯片\"不能称为掌握 CPU 技术，原因是？",
+   "options": [
+    "核心设计来自他人，只完成集成与制造",
+    "因为成本太低",
+    "因为芯片不能运行"
+   ],
+   "answer": 0,
+   "explain": "自主性体现在微结构与指令集的设计能力上。"
+  },
+  {
+   "id": "q07-1",
+   "chapterId": "ch07",
+   "type": "single",
+   "question": "下列哪类 CPU 的功耗通常在毫瓦级？",
+   "options": [
+    "嵌入式与微控制器",
+    "服务器",
+    "台式机"
+   ],
+   "answer": 0,
+   "explain": "靠电池工作，必须把功耗压到极低。"
+  },
+  {
+   "id": "q07-2",
+   "chapterId": "ch07",
+   "type": "single",
+   "question": "降低功耗的三条路径不包括？",
+   "options": [
+    "减少指令集条数",
+    "采用先进工艺",
+    "操作系统电源管理"
+   ],
+   "answer": 0,
+   "explain": "指令集条数与功耗没有直接对应关系。"
+  },
+  {
+   "id": "q07-3",
+   "chapterId": "ch07",
+   "type": "single",
+   "question": "低功耗 CPU 的一个直接好处是？",
+   "options": [
+    "可以做出无风扇的静音计算机",
+    "可以不用操作系统",
+    "可以不用内存"
+   ],
+   "answer": 0,
+   "explain": "功耗低、发热小，机械风扇可以省掉。"
+  },
+  {
+   "id": "q07-4",
+   "chapterId": "ch07",
+   "type": "single",
+   "question": "数据中心电费约占运营成本多少？",
+   "options": [
+    "约三分之一",
+    "约十分之一",
+    "几乎为零"
+   ],
+   "answer": 0,
+   "explain": "海量服务器加制冷，电费是主要成本项之一。"
+  },
+  {
+   "id": "q08-1",
+   "chapterId": "ch08",
+   "type": "single",
+   "question": "摩尔定律 1975 年的修正表述是？",
+   "options": [
+    "晶体管数量每两年翻一倍",
+    "每年翻四倍",
+    "每十年翻一倍"
+   ],
+   "answer": 0,
+   "explain": "原为每年翻倍，1975 年改为两年。"
+  },
+  {
+   "id": "q08-2",
+   "chapterId": "ch08",
+   "type": "single",
+   "question": "Tick-Tock 把工艺与架构分开做的主要目的是？",
+   "options": [
+    "分解难度、控制风险、稳定节奏",
+    "节省广告费",
+    "减少核数"
+   ],
+   "answer": 0,
+   "explain": "两件最难的钉子分开钉，避免问题交织。"
+  },
+  {
+   "id": "q08-3",
+   "chapterId": "ch08",
+   "type": "single",
+   "question": "2017 年后 Tick-Tock 变成？",
+   "options": [
+    "制程—架构—优化三步走",
+    "彻底取消",
+    "改成四年一轮"
+   ],
+   "answer": 0,
+   "explain": "增加优化步，周期从两年拉到三年。"
+  },
+  {
+   "id": "q08-4",
+   "chapterId": "ch08",
+   "type": "single",
+   "question": "CPU 性能提升放缓的原因不包括？",
+   "options": [
+    "指令集数量减少",
+    "应用需求饱和",
+    "Intel 市场份额过高"
+   ],
+   "answer": 0,
+   "explain": "指令集数量与性能增速没有这种因果关系。"
+  },
+  {
+   "id": "q09-1",
+   "chapterId": "ch09",
+   "type": "single",
+   "question": "异构计算的两个基本思想是？",
+   "options": [
+    "专人干专事，以及把软件功能硬件化",
+    "提高主频，增加核数",
+    "降价，缩面积"
+   ],
+   "answer": 0,
+   "explain": "专用化与硬件化是异构的核心。"
+  },
+  {
+   "id": "q09-2",
+   "chapterId": "ch09",
+   "type": "single",
+   "question": "GPU 画线比 CPU 快，主要因为？",
+   "options": [
+    "一次生成整条线的点，而不是逐点执行指令",
+    "主频更高",
+    "内存更大"
+   ],
+   "answer": 0,
+   "explain": "把循环插值固化进硬件，指令数大幅减少。"
+  },
+  {
+   "id": "q09-3",
+   "chapterId": "ch09",
+   "type": "single",
+   "question": "big.little 的适用场景是？",
+   "options": [
+    "应用多样且对功耗敏感的设备，如手机",
+    "超算中心",
+    "工业控制"
+   ],
+   "answer": 0,
+   "explain": "大小核按负载切换，兼顾性能与续航。"
+  },
+  {
+   "id": "q10-1",
+   "chapterId": "ch10",
+   "type": "single",
+   "question": "后门与漏洞的本质区别是？",
+   "options": [
+    "后门是有意安排，漏洞是疏忽造成",
+    "后门更严重",
+    "漏洞更难修"
+   ],
+   "answer": 0,
+   "explain": "一个是态度问题，一个是能力问题。"
+  },
+  {
+   "id": "q10-2",
+   "chapterId": "ch10",
+   "type": "single",
+   "question": "Meltdown/Spectre 利用的是？",
+   "options": [
+    "乱序执行、推测执行、缓存等性能优化机制",
+    "电源管理漏洞",
+    "网络协议缺陷"
+   ],
+   "answer": 0,
+   "explain": "它们利用现代 CPU 的共性优化原理实现越权读取。"
+  },
+  {
+   "id": "q10-3",
+   "chapterId": "ch10",
+   "type": "single",
+   "question": "操作系统补丁的主要代价是？",
+   "options": [
+    "性能下降",
+    "失去网络功能",
+    "无法开机"
+   ],
+   "answer": 0,
+   "explain": "绕开漏洞往往要关闭优化特性。"
+  },
+  {
+   "id": "q10-4",
+   "chapterId": "ch10",
+   "type": "single",
+   "question": "为什么说\"无法判断有没有后门\"最危险？",
+   "options": [
+    "黑盒外部测试无法证明其清白",
+    "因为后门一定存在",
+    "因为漏洞无法修复"
+   ],
+   "answer": 0,
+   "explain": "不可验证意味着风险不可控。"
+  },
+  {
+   "id": "q11-1",
+   "chapterId": "ch11",
+   "type": "single",
+   "question": "下列哪项不属于 CPU 的三门基础理论？",
+   "options": [
+    "概率论",
+    "布尔代数",
+    "数字电路设计"
+   ],
+   "answer": 0,
+   "explain": "书中列的是布尔代数、数字电路、计算机系统结构。"
+  },
+  {
+   "id": "q11-2",
+   "chapterId": "ch11",
+   "type": "single",
+   "question": "物理设计的输出是什么？",
+   "options": [
+    "可交给流片厂的版图",
+    "一份需求文档",
+    "一段汇编代码"
+   ],
+   "answer": 0,
+   "explain": "物理设计确定器件位置与连线，最终形成版图。"
+  },
+  {
+   "id": "q11-3",
+   "chapterId": "ch11",
+   "type": "single",
+   "question": "电路设计比软件难的原因不包括？",
+   "options": [
+    "电路模块都是无状态的",
+    "硬件描述语言更新慢、描述能力弱",
+    "电路是高度耦合的网状结构"
+   ],
+   "answer": 0,
+   "explain": "电路模块大量是有状态的，恰恰更难。"
+  },
+  {
+   "id": "q12-1",
+   "chapterId": "ch12",
+   "type": "single",
+   "question": "EDA 的两大功能是？",
+   "options": [
+    "设计与验证",
+    "编译与运行",
+    "绘图与打印"
+   ],
+   "answer": 0,
+   "explain": "自动布局布线和仿真验证是核心。"
+  },
+  {
+   "id": "q12-2",
+   "chapterId": "ch12",
+   "type": "single",
+   "question": "RTL 经逻辑综合后得到什么？",
+   "options": [
+    "门级网表",
+    "汇编代码",
+    "版图"
+   ],
+   "answer": 0,
+   "explain": "网表是门单元及其连线的描述。"
+  },
+  {
+   "id": "q12-3",
+   "chapterId": "ch12",
+   "type": "single",
+   "question": "前端与后端的分界点是？",
+   "options": [
+    "网表",
+    "操作系统",
+    "封装"
+   ],
+   "answer": 0,
+   "explain": "网表之前是逻辑设计，之后是物理设计。"
+  },
+  {
+   "id": "q12-4",
+   "chapterId": "ch12",
+   "type": "single",
+   "question": "常用于教学的波形查看工具是？",
+   "options": [
+    "gtkwave",
+    "Photoshop",
+    "WPS"
+   ],
+   "answer": 0,
+   "explain": "gtkwave 用来观察仿真中 0/1 随时间的变化。"
+  },
+  {
+   "id": "q13-1",
+   "chapterId": "ch13",
+   "type": "single",
+   "question": "CPU 中 0 和 1 的物理载体是？",
+   "options": [
+    "CMOS 晶体管的截止与导通",
+    "磁盘的磁极",
+    "光的明暗"
+   ],
+   "answer": 0,
+   "explain": "引脚电压高低对应 0/1。"
+  },
+  {
+   "id": "q13-2",
+   "chapterId": "ch13",
+   "type": "single",
+   "question": "负数补码的计算方法是？",
+   "options": [
+    "原码按位取反后加一",
+    "原码加一",
+    "原码最高位置一"
+   ],
+   "answer": 0,
+   "explain": "这是补码的标准定义。"
+  },
+  {
+   "id": "q13-3",
+   "chapterId": "ch13",
+   "type": "single",
+   "question": "补码带来的直接好处是？",
+   "options": [
+    "减法可转成加法，只需加法器",
+    "存储容量翻倍",
+    "主频提高"
+   ],
+   "answer": 0,
+   "explain": "符号位与数值位统一处理。"
+  },
+  {
+   "id": "q13-4",
+   "chapterId": "ch13",
+   "type": "single",
+   "question": "IEEE 754 单精度浮点数的位宽是？",
+   "options": [
+    "32 位",
+    "16 位",
+    "64 位"
+   ],
+   "answer": 0,
+   "explain": "单精度 32 位，双精度 64 位。"
+  },
+  {
+   "id": "q14-1",
+   "chapterId": "ch14",
+   "type": "single",
+   "question": "32 位加法器由什么构成？",
+   "options": [
+    "32 个 1 位加法器串联，低位进位接高位",
+    "32 个乘法器",
+    "一个 32 位寄存器"
+   ],
+   "answer": 0,
+   "explain": "与竖式加法同理，逐位进位。"
+  },
+  {
+   "id": "q14-2",
+   "chapterId": "ch14",
+   "type": "single",
+   "question": "ALU 的控制端 ALUop 作用是什么？",
+   "options": [
+    "选择执行哪种运算",
+    "设置主频",
+    "选择寄存器编号"
+   ],
+   "answer": 0,
+   "explain": "它决定多路选择器输出哪一路运算结果。"
+  },
+  {
+   "id": "q14-3",
+   "chapterId": "ch14",
+   "type": "single",
+   "question": "\"CPU 是多少位\"通常指？",
+   "options": [
+    "寄存器的位宽",
+    "主板尺寸",
+    "风扇转速"
+   ],
+   "answer": 0,
+   "explain": "位宽决定单次处理的数据宽度与寻址能力。"
+  },
+  {
+   "id": "q14-4",
+   "chapterId": "ch14",
+   "type": "single",
+   "question": "程序计数器 PC 属于哪类寄存器？",
+   "options": [
+    "地址寄存器",
+    "数据寄存器",
+    "标志位寄存器"
+   ],
+   "answer": 0,
+   "explain": "PC 保存下一条要执行的指令地址。"
+  },
+  {
+   "id": "q15-1",
+   "chapterId": "ch15",
+   "type": "single",
+   "question": "四级流水线执行两条指令需要几拍？",
+   "options": [
+    "5 拍",
+    "8 拍",
+    "4 拍"
+   ],
+   "answer": 0,
+   "explain": "第一拍填满，之后每拍出一条，共 4+2-1=5。"
+  },
+  {
+   "id": "q15-2",
+   "chapterId": "ch15",
+   "type": "single",
+   "question": "加深流水线的主要好处是？",
+   "options": [
+    "提高吞吐率与主频",
+    "降低面积",
+    "减少寄存器"
+   ],
+   "answer": 0,
+   "explain": "每级活少、时钟可更短，同时并行度更高。"
+  },
+  {
+   "id": "q15-3",
+   "chapterId": "ch15",
+   "type": "single",
+   "question": "Pentium 4 的教训说明？",
+   "options": [
+    "主频高不等于性能高",
+    "流水线没有用",
+    "AMD 没有竞争力"
+   ],
+   "answer": 0,
+   "explain": "31 级流水线主频虽高，实测性能不及 P3。"
+  },
+  {
+   "id": "q15-4",
+   "chapterId": "ch15",
+   "type": "single",
+   "question": "段间寄存器的作用是？",
+   "options": [
+    "保存上一段的结果供下一段使用",
+    "提高电压",
+    "存储程序"
+   ],
+   "answer": 0,
+   "explain": "它是流水段之间的数据交接点。"
+  },
+  {
+   "id": "q16-1",
+   "chapterId": "ch16",
+   "type": "single",
+   "question": "数据相关（RAW）指？",
+   "options": [
+    "后一条指令要读前一条刚写的结果",
+    "两条指令抢同一个部件",
+    "两条指令写同一寄存器"
+   ],
+   "answer": 0,
+   "explain": "写后读是最常见的数据依赖。"
+  },
+  {
+   "id": "q16-2",
+   "chapterId": "ch16",
+   "type": "single",
+   "question": "保留站中\"源操作数的指针\"存的是什么？",
+   "options": [
+    "尚未就绪的操作数由哪个保留站单元产生",
+    "内存地址",
+    "指令地址"
+   ],
+   "answer": 0,
+   "explain": "靠它建立生产者与消费者的关联。"
+  },
+  {
+   "id": "q16-3",
+   "chapterId": "ch16",
+   "type": "single",
+   "question": "ROB 的作用是？",
+   "options": [
+    "按程序原序提交结果，并支持例外精确处理",
+    "加快取指",
+    "扩大缓存"
+   ],
+   "answer": 0,
+   "explain": "保证乱序执行的最终结果与顺序执行一致。"
+  },
+  {
+   "id": "q16-4",
+   "chapterId": "ch16",
+   "type": "single",
+   "question": "分支目标缓冲器（BTB）提高的是？",
+   "options": [
+    "转移指令的预测成功率",
+    "内存带宽",
+    "主频"
+   ],
+   "answer": 0,
+   "explain": "它记住分支最近的目标地址，供取指参考。"
+  },
+  {
+   "id": "q17-1",
+   "chapterId": "ch17",
+   "type": "single",
+   "question": "读指令 LD 的功能是？",
+   "options": [
+    "把内存单元的值加载到寄存器",
+    "把寄存器值写入内存",
+    "跳转到目标地址"
+   ],
+   "answer": 0,
+   "explain": "LD 是 load，方向是内存到寄存器。"
+  },
+  {
+   "id": "q17-2",
+   "chapterId": "ch17",
+   "type": "single",
+   "question": "缓存有效的依据是？",
+   "options": [
+    "数据局部性，热点数据被反复访问",
+    "内存容量大",
+    "CPU 主频低"
+   ],
+   "answer": 0,
+   "explain": "少量热点数据留在高速存储里，命中率就高。"
+  },
+  {
+   "id": "q17-3",
+   "chapterId": "ch17",
+   "type": "single",
+   "question": "分页相对分段的主要优势是？",
+   "options": [
+    "按需分配、便于伸缩、利用率高",
+    "实现更简单",
+    "速度更快"
+   ],
+   "answer": 0,
+   "explain": "分页是离散映射，可增可减。"
+  },
+  {
+   "id": "q17-4",
+   "chapterId": "ch17",
+   "type": "single",
+   "question": "大尾端的含义是？",
+   "options": [
+    "内存低地址字节装入寄存器高位",
+    "低地址装入低位",
+    "两种都可"
+   ],
+   "answer": 0,
+   "explain": "这是大尾端的定义，与小尾端相反。"
+  },
+  {
+   "id": "q18-1",
+   "chapterId": "ch18",
+   "type": "single",
+   "question": "特权级机制的作用是？",
+   "options": [
+    "隔离应用与操作系统可访问的资源",
+    "提高主频",
+    "扩大内存"
+   ],
+   "answer": 0,
+   "explain": "防止一个程序破坏其他程序与系统。"
+  },
+  {
+   "id": "q18-2",
+   "chapterId": "ch18",
+   "type": "single",
+   "question": "中断与例外的根本区别是？",
+   "options": [
+    "中断由外部信号触发，例外由指令执行触发",
+    "中断更严重",
+    "例外不可处理"
+   ],
+   "answer": 0,
+   "explain": "触发源不同，处理机制类似。"
+  },
+  {
+   "id": "q18-3",
+   "chapterId": "ch18",
+   "type": "single",
+   "question": "DMA 高效的原因是？",
+   "options": [
+    "外设与内存直接传输，CPU 不逐条搬运",
+    "DMA 主频更高",
+    "DMA 能执行指令"
+   ],
+   "answer": 0,
+   "explain": "控制器独立工作，省掉大量 I/O 指令。"
+  },
+  {
+   "id": "q18-4",
+   "chapterId": "ch18",
+   "type": "single",
+   "question": "32 位 CPU 用直接 I/O 传 1MB 数据约需多少条指令？",
+   "options": [
+    "约 3 万多条",
+    "约 30 条",
+    "约 300 条"
+   ],
+   "answer": 0,
+   "explain": "1MB÷32 位≈32768 条。"
+  },
+  {
+   "id": "q19-1",
+   "chapterId": "ch19",
+   "type": "single",
+   "question": "系统调用的执行权限是？",
+   "options": [
+    "操作系统级（高特权级）",
+    "应用级",
+    "无所谓"
+   ],
+   "answer": 0,
+   "explain": "核心资源只能在高特权级下访问。"
+  },
+  {
+   "id": "q19-2",
+   "chapterId": "ch19",
+   "type": "single",
+   "question": "下列哪项属于库函数而非系统调用？",
+   "options": [
+    "printf()",
+    "syscall 指令",
+    "read() 的内核实现"
+   ],
+   "answer": 0,
+   "explain": "printf 是应用态的库函数。"
+  },
+  {
+   "id": "q19-3",
+   "chapterId": "ch19",
+   "type": "single",
+   "question": "Linux 内核的系统调用有多少项？",
+   "options": [
+    "两百多项",
+    "十几项",
+    "上万项"
+   ],
+   "answer": 0,
+   "explain": "书中给出的量级是 200 多项。"
+  },
+  {
+   "id": "q19-4",
+   "chapterId": "ch19",
+   "type": "single",
+   "question": "系统调用前操作系统会做什么？",
+   "options": [
+    "对应用进行权限检查",
+    "重启计算机",
+    "清空内存"
+   ],
+   "answer": 0,
+   "explain": "防止恶意应用获取非法信息。"
+  },
+  {
+   "id": "q20-1",
+   "chapterId": "ch20",
+   "type": "single",
+   "question": "ADDV.W 一条指令能算几组 32 位加法？",
+   "options": [
+    "4 组",
+    "2 组",
+    "1 组"
+   ],
+   "answer": 0,
+   "explain": "128 位寄存器装 4 个 32 位数据。"
+  },
+  {
+   "id": "q20-2",
+   "chapterId": "ch20",
+   "type": "single",
+   "question": "向量指令的思想是？",
+   "options": [
+    "空间换时间",
+    "时间换空间",
+    "降低主频"
+   ],
+   "answer": 0,
+   "explain": "多用电路面积换单位时间更多计算。"
+  },
+  {
+   "id": "q20-3",
+   "chapterId": "ch20",
+   "type": "single",
+   "question": "硬件加密相对软件加密的优势不包括？",
+   "options": [
+    "算法种类更多",
+    "速度快几十倍",
+    "更难被植入恶意代码"
+   ],
+   "answer": 0,
+   "explain": "算法种类取决于支持哪些标准，不是硬件天然更多。"
+  },
+  {
+   "id": "q20-4",
+   "chapterId": "ch20",
+   "type": "single",
+   "question": "我国自主密码算法包括？",
+   "options": [
+    "SM2、SM3、SM4",
+    "DES、MD5",
+    "RSA、DSA"
+   ],
+   "answer": 0,
+   "explain": "SM 系列是国密算法。"
+  },
+  {
+   "id": "q21-1",
+   "chapterId": "ch21",
+   "type": "single",
+   "question": "虚拟化的本质是？",
+   "options": [
+    "把一台计算机虚拟为多台逻辑计算机",
+    "把多台合成一台",
+    "提高主频"
+   ],
+   "answer": 0,
+   "explain": "每台逻辑机可跑独立操作系统。"
+  },
+  {
+   "id": "q21-2",
+   "chapterId": "ch21",
+   "type": "single",
+   "question": "硬件虚拟化的优势是？",
+   "options": [
+    "虚拟机性能接近物理机",
+    "不需要操作系统",
+    "不需要内存"
+   ],
+   "answer": 0,
+   "explain": "CPU 提供硬件机制，避免软件模拟开销。"
+  },
+  {
+   "id": "q21-3",
+   "chapterId": "ch21",
+   "type": "single",
+   "question": "可信计算的核心思路是？",
+   "options": [
+    "白名单度量，只允许可信资源运行",
+    "查杀已知病毒",
+    "加密所有文件"
+   ],
+   "answer": 0,
+   "explain": "主动免疫，先度量后运行。"
+  },
+  {
+   "id": "q21-4",
+   "chapterId": "ch21",
+   "type": "single",
+   "question": "TPCM 与 CPU 的启动顺序是？",
+   "options": [
+    "TPCM 先启动",
+    "CPU 先启动",
+    "同时启动"
+   ],
+   "answer": 0,
+   "explain": "可信模块要最先启动并度量其他部件。"
+  },
+  {
+   "id": "q22-1",
+   "chapterId": "ch22",
+   "type": "single",
+   "question": "龙芯 3B4000 四路服务器的总核数是？",
+   "options": [
+    "16",
+    "8",
+    "4"
+   ],
+   "answer": 0,
+   "explain": "4 路 × 每芯片 4 核 = 16。"
+  },
+  {
+   "id": "q22-2",
+   "chapterId": "ch22",
+   "type": "single",
+   "question": "Amdahl 定律中串行部分占 25% 时，加速比上限是？",
+   "options": [
+    "4 倍",
+    "25 倍",
+    "无限"
+   ],
+   "answer": 0,
+   "explain": "S→1/(1-a)=1/0.25=4。"
+  },
+  {
+   "id": "q22-3",
+   "chapterId": "ch22",
+   "type": "single",
+   "question": "NUMA 的特点是？",
+   "options": [
+    "访问本地内存快于远程内存",
+    "所有访问等速",
+    "无内存"
+   ],
+   "answer": 0,
+   "explain": "\"非统一\"即访问时间随位置而变。"
+  },
+  {
+   "id": "q22-4",
+   "chapterId": "ch22",
+   "type": "single",
+   "question": "龙芯的缓存同步指令是？",
+   "options": [
+    "SYNC",
+    "FENCE",
+    "BARRIER"
+   ],
+   "answer": 0,
+   "explain": "书中明确为 SYNC。"
+  },
+  {
+   "id": "q23-1",
+   "chapterId": "ch23",
+   "type": "single",
+   "question": "桥片的作用是？",
+   "options": [
+    "接管外设管理，连接 CPU 与外设",
+    "提高主频",
+    "扩大缓存"
+   ],
+   "answer": 0,
+   "explain": "桥片是 CPU 的\"副官\"。"
+  },
+  {
+   "id": "q23-2",
+   "chapterId": "ch23",
+   "type": "single",
+   "question": "龙芯 3A4000 的 BGA 封装引脚数？",
+   "options": [
+    "1211",
+    "121",
+    "12110"
+   ],
+   "answer": 0,
+   "explain": "书中给出 1211 个引脚。"
+  },
+  {
+   "id": "q23-3",
+   "chapterId": "ch23",
+   "type": "single",
+   "question": "BIOS 的三大功能不包括？",
+   "options": [
+    "编译应用程序",
+    "系统自检",
+    "加载操作系统"
+   ],
+   "answer": 0,
+   "explain": "BIOS 负责自检、配置与引导。"
+  },
+  {
+   "id": "q23-4",
+   "chapterId": "ch23",
+   "type": "single",
+   "question": "龙芯 2018 年后采用的固件项目是？",
+   "options": [
+    "UEFI",
+    "PMON",
+    "BIOS 老版本"
+   ],
+   "answer": 0,
+   "explain": "2018 年前用 PMON，之后转 UEFI。"
+  },
+  {
+   "id": "q24-1",
+   "chapterId": "ch24",
+   "type": "single",
+   "question": "Fabless 指的是？",
+   "options": [
+    "只做设计、没有生产线的芯片公司",
+    "只做生产的代工厂",
+    "既设计又生产的公司"
+   ],
+   "answer": 0,
+   "explain": "Fabless 即无晶圆厂设计公司。"
+  },
+  {
+   "id": "q24-2",
+   "chapterId": "ch24",
+   "type": "single",
+   "question": "\"流片\"一词来源于？",
+   "options": [
+    "磁带（tape）作为交付介质",
+    "流水线生产",
+    "胶片拍摄"
+   ],
+   "answer": 0,
+   "explain": "tapeout 源自磁带顺序存储的特性。"
+  },
+  {
+   "id": "q24-3",
+   "chapterId": "ch24",
+   "type": "single",
+   "question": "纳米工艺的专业定义是？",
+   "options": [
+    "栅极沟道的最小宽度",
+    "两个晶体管的间距",
+    "晶体管整体尺寸"
+   ],
+   "answer": 0,
+   "explain": "其余两种说法是传播中的讹误。"
+  },
+  {
+   "id": "q24-4",
+   "chapterId": "ch24",
+   "type": "single",
+   "question": "交付给流片厂的文件通称？",
+   "options": [
+    "GDS2 版图文件",
+    "Verilog 源码",
+    "网表"
+   ],
+   "answer": 0,
+   "explain": "版图是物理设计的最终成果。"
+  },
+  {
+   "id": "q25-1",
+   "chapterId": "ch25",
+   "type": "single",
+   "question": "硅在地壳中的含量约为？",
+   "options": [
+    "26.3%",
+    "2.6%",
+    "63%"
+   ],
+   "answer": 0,
+   "explain": "仅次于氧的 48.60%。"
+  },
+  {
+   "id": "q25-2",
+   "chapterId": "ch25",
+   "type": "single",
+   "question": "光刻中起\"模板\"作用的是？",
+   "options": [
+    "带电路图形的掩膜版",
+    "光刻胶",
+    "酸液"
+   ],
+   "answer": 0,
+   "explain": "掩膜版决定哪些区域被光照到。"
+  },
+  {
+   "id": "q25-3",
+   "chapterId": "ch25",
+   "type": "single",
+   "question": "下列哪项属于\"掺杂\"？",
+   "options": [
+    "离子注入",
+    "蚀刻凹槽",
+    "铺设绝缘层"
+   ],
+   "answer": 0,
+   "explain": "掺杂是改变材料性质，注入金属离子正是此类。"
+  },
+  {
+   "id": "q25-4",
+   "chapterId": "ch25",
+   "type": "single",
+   "question": "40 层电路、每层 1.6 天，仅晶圆生产约需？",
+   "options": [
+    "64 天",
+    "40 天",
+    "16 天"
+   ],
+   "answer": 0,
+   "explain": "40×1.6=64 天。"
+  },
+  {
+   "id": "q26-1",
+   "chapterId": "ch26",
+   "type": "single",
+   "question": "电容在电路中的典型作用是？",
+   "options": [
+    "存储电荷、通交流阻直流",
+    "限制电流",
+    "把电能变磁能"
+   ],
+   "answer": 0,
+   "explain": "电容隔直通交，可滤波。"
+  },
+  {
+   "id": "q26-2",
+   "chapterId": "ch26",
+   "type": "single",
+   "question": "P 型半导体的形成方式是？",
+   "options": [
+    "纯硅掺三价元素，形成空穴",
+    "掺五价元素，多出电子",
+    "纯硅不加杂质"
+   ],
+   "answer": 0,
+   "explain": "三价元素缺电子，形成空穴。"
+  },
+  {
+   "id": "q26-3",
+   "chapterId": "ch26",
+   "type": "single",
+   "question": "CMOS 反相器中输入高电平时？",
+   "options": [
+    "N 管导通、P 管截止，输出低",
+    "两管都导通",
+    "两管都截止"
+   ],
+   "answer": 0,
+   "explain": "互补结构保证输出与输入相反。"
+  },
+  {
+   "id": "q26-4",
+   "chapterId": "ch26",
+   "type": "single",
+   "question": "下列属于时序电路的是？",
+   "options": [
+    "寄存器",
+    "译码器",
+    "加法器"
+   ],
+   "answer": 0,
+   "explain": "寄存器带记忆，输出与内部状态有关。"
+  },
+  {
+   "id": "q27-1",
+   "chapterId": "ch27",
+   "type": "single",
+   "question": "版图设计者的基本功是？",
+   "options": [
+    "看到平面图能想到三维结构",
+    "会写 Verilog",
+    "会焊板子"
+   ],
+   "answer": 0,
+   "explain": "多层色块叠放，必须脑内还原立体。"
+  },
+  {
+   "id": "q27-2",
+   "chapterId": "ch27",
+   "type": "single",
+   "question": "全球光刻机市场份额最高的是？",
+   "options": [
+    "ASML",
+    "尼康",
+    "佳能"
+   ],
+   "answer": 0,
+   "explain": "约 80% 份额。"
+  },
+  {
+   "id": "q27-3",
+   "chapterId": "ch27",
+   "type": "single",
+   "question": "晶片成本与什么成正比？",
+   "options": [
+    "晶片面积",
+    "引脚数量",
+    "测试时间"
+   ],
+   "answer": 0,
+   "explain": "面积越小，一片晶圆切出的 die 越多。"
+  },
+  {
+   "id": "q27-4",
+   "chapterId": "ch27",
+   "type": "single",
+   "question": "CPU 总成本与成品率的关系是？",
+   "options": [
+    "成反比",
+    "成正比",
+    "无关"
+   ],
+   "answer": 0,
+   "explain": "成品率越低，摊到良品上的成本越高。"
+  },
+  {
+   "id": "q28-1",
+   "chapterId": "ch28",
+   "type": "single",
+   "question": "FPGA 相对流片的最大优势是？",
+   "options": [
+    "一次购买、反复烧写，成本低",
+    "速度更快",
+    "不需要设计"
+   ],
+   "answer": 0,
+   "explain": "省掉上千万流片费。"
+  },
+  {
+   "id": "q28-2",
+   "chapterId": "ch28",
+   "type": "single",
+   "question": "龙芯 3A4000 在 FPGA 上的最高主频约为？",
+   "options": [
+    "50MHz",
+    "2GHz",
+    "500MHz"
+   ],
+   "answer": 0,
+   "explain": "真片 2.0GHz，FPGA 上只有 50MHz。"
+  },
+  {
+   "id": "q28-3",
+   "chapterId": "ch28",
+   "type": "single",
+   "question": "SOI 解决的核心问题是？",
+   "options": [
+    "漏电流",
+    "主频太低",
+    "引脚太少"
+   ],
+   "answer": 0,
+   "explain": "埋氧层阻挡源漏间漏电。"
+  },
+  {
+   "id": "q28-4",
+   "chapterId": "ch28",
+   "type": "single",
+   "question": "FinFET 的栅极结构是？",
+   "options": [
+    "三面包围沟道的 3D 结构",
+    "平面结构",
+    "四面环绕"
+   ],
+   "answer": 0,
+   "explain": "像鱼鳍，三面控制。"
+  },
+  {
+   "id": "q29-1",
+   "chapterId": "ch29",
+   "type": "single",
+   "question": "CPU\"上古时代\"结束的标志是？",
+   "options": [
+    "1971 年 Intel 4004 发布",
+    "1951 年 Ferranti Mark 1",
+    "1964 年 CDC 6600"
+   ],
+   "answer": 0,
+   "explain": "4004 让 CPU 成为独立商品。"
+  },
+  {
+   "id": "q29-2",
+   "chapterId": "ch29",
+   "type": "single",
+   "question": "下列哪款不是 70 年代\"老四强\"？",
+   "options": [
+    "Alpha 21264",
+    "Intel 8080",
+    "Zilog Z80"
+   ],
+   "answer": 0,
+   "explain": "Alpha 是 90 年代 DEC 的产品。"
+  },
+  {
+   "id": "q29-3",
+   "chapterId": "ch29",
+   "type": "single",
+   "question": "苹果早期个人计算机使用过哪些 CPU？",
+   "options": [
+    "6502、68000、PowerPC、x86",
+    "只有 x86",
+    "只有 ARM"
+   ],
+   "answer": 0,
+   "explain": "四代更替，2003 年才转向 Intel。"
+  },
+  {
+   "id": "q29-4",
+   "chapterId": "ch29",
+   "type": "single",
+   "question": "PDP-11 的历史意义之一是？",
+   "options": [
+    "第一个运行 UNIX 的计算机",
+    "第一台超算",
+    "第一台 PC"
+   ],
+   "answer": 0,
+   "explain": "它也是 PC 时代前销量最大的计算机。"
+  },
+  {
+   "id": "q30-1",
+   "chapterId": "ch30",
+   "type": "single",
+   "question": "Intel 成功的核心原因是？",
+   "options": [
+    "在指令集、整机标准、操作系统三处保持兼容与开放",
+    "单核性能长期第一",
+    "价格最低"
+   ],
+   "answer": 0,
+   "explain": "生态黏性来自兼容。"
+  },
+  {
+   "id": "q30-2",
+   "chapterId": "ch30",
+   "type": "single",
+   "question": "AMD 的两大竞争法宝是？",
+   "options": [
+    "技术领跑与质优价廉",
+    "广告与渠道",
+    "规模与垄断"
+   ],
+   "answer": 0,
+   "explain": "多次率先突破，同时价格约为同级的三分之二。"
+  },
+  {
+   "id": "q30-3",
+   "chapterId": "ch30",
+   "type": "single",
+   "question": "ARM 生态成功的关键是？",
+   "options": [
+    "低门槛的指令集与 IP 授权模式",
+    "自己制造芯片",
+    "只做高端"
+   ],
+   "answer": 0,
+   "explain": "不造芯片，让所有下游厂商成为它的盟友。"
+  },
+  {
+   "id": "q30-4",
+   "chapterId": "ch30",
+   "type": "single",
+   "question": "苹果 A6 的转折意义是？",
+   "options": [
+    "抛弃 ARM 公版，改用自研微架构",
+    "首次使用 x86",
+    "首次用 5nm"
+   ],
+   "answer": 0,
+   "explain": "从定制走向自研核。"
+  },
+  {
+   "id": "q31-1",
+   "chapterId": "ch31",
+   "type": "single",
+   "question": "MIPS 在技术上的领先事例是？",
+   "options": [
+    "1991 年 R4000 率先实现 64 位",
+    "率先做出 5nm",
+    "率先做多核"
+   ],
+   "answer": 0,
+   "explain": "比 Intel、ARM 早十年以上。"
+  },
+  {
+   "id": "q31-2",
+   "chapterId": "ch31",
+   "type": "single",
+   "question": "RISC-V 的核心文档约多少页？",
+   "options": [
+    "238 页",
+    "1000 页以上",
+    "40 页"
+   ],
+   "answer": 0,
+   "explain": "基础指令 40 多条，文档 238 页。"
+  },
+  {
+   "id": "q31-3",
+   "chapterId": "ch31",
+   "type": "single",
+   "question": "日本失去 CPU 话语权的直接事件是？",
+   "options": [
+    "1986 年 Intel 中止 32 位授权",
+    "TRON 项目成功",
+    "EPI 计划启动"
+   ],
+   "answer": 0,
+   "explain": "断供使日本只能购买成品。"
+  },
+  {
+   "id": "q31-4",
+   "chapterId": "ch31",
+   "type": "single",
+   "question": "欧洲 EPI 计划准备采用哪些指令集？",
+   "options": [
+    "ARM 或 RISC-V",
+    "只 x86",
+    "只 Power"
+   ],
+   "answer": 0,
+   "explain": "两条路线并行评估。"
+  },
+  {
+   "id": "q32-1",
+   "chapterId": "ch32",
+   "type": "single",
+   "question": "CPU 的价值由什么决定？",
+   "options": [
+    "其上承载的软件生态的价值",
+    "主频高低",
+    "晶体管数量"
+   ],
+   "answer": 0,
+   "explain": "CPU 单独没有使用价值。"
+  },
+  {
+   "id": "q32-2",
+   "chapterId": "ch32",
+   "type": "single",
+   "question": "Inside 与 Outside 分别指？",
+   "options": [
+    "芯片内的 CPU 核与芯片外的软件生态",
+    "封装内外",
+    "主板内外"
+   ],
+   "answer": 0,
+   "explain": "龙芯 2012 年提出的模型。"
+  },
+  {
+   "id": "q32-3",
+   "chapterId": "ch32",
+   "type": "single",
+   "question": "应用软件接口包括哪三项？",
+   "options": [
+    "ISA、System Call、API",
+    "ISA、PCB、BIOS",
+    "API、GPU、DMA"
+   ],
+   "answer": 0,
+   "explain": "三者共同构成应用运行条件。"
+  },
+  {
+   "id": "q32-4",
+   "chapterId": "ch32",
+   "type": "single",
+   "question": "生态起步最难的问题是？",
+   "options": [
+    "应用少、用户少、厂商不愿支持的双向怪圈",
+    "缺资金",
+    "缺人才"
+   ],
+   "answer": 0,
+   "explain": "正反馈难以启动。"
+  },
+  {
+   "id": "q33-1",
+   "chapterId": "ch33",
+   "type": "single",
+   "question": "中国开发者结构的特点是？",
+   "options": [
+    "应用软件开发者多、系统软件开发者少",
+    "系统软件多、应用少",
+    "两者均衡"
+   ],
+   "answer": 0,
+   "explain": "系统软件约万人规模，API 开发者不到千人。"
+  },
+  {
+   "id": "q33-2",
+   "chapterId": "ch33",
+   "type": "single",
+   "question": "Linux 发行版的核心工作是？",
+   "options": [
+    "把分散源码在特定平台编译、打包",
+    "从零写内核",
+    "设计指令集"
+   ],
+   "answer": 0,
+   "explain": "技术含量低，以重编译为主。"
+  },
+  {
+   "id": "q33-3",
+   "chapterId": "ch33",
+   "type": "single",
+   "question": "虚拟机生态的关键作用是？",
+   "options": [
+    "屏蔽指令集差异，源码到处可跑",
+    "提高主频",
+    "降低功耗"
+   ],
+   "answer": 0,
+   "explain": "一次编译，多处运行。"
+  },
+  {
+   "id": "q33-4",
+   "chapterId": "ch33",
+   "type": "single",
+   "question": "2019 年 Intel 与联想的利润率对比说明？",
+   "options": [
+    "掌握解决方案者拿走产业链多数利润",
+    "整机厂更赚钱",
+    "芯片厂不赚钱"
+   ],
+   "answer": 0,
+   "explain": "计算机领域 CPU 厂利润率为整机厂 25 倍。"
+  },
+  {
+   "id": "q34-1",
+   "chapterId": "ch34",
+   "type": "single",
+   "question": "优秀生态的三个原则是？",
+   "options": [
+    "开放、兼容、优化",
+    "便宜、快速、稳定",
+    "开源、免费、众包"
+   ],
+   "answer": 0,
+   "explain": "分别对应壮大力量、积累成果、提升体验。"
+  },
+  {
+   "id": "q34-2",
+   "chapterId": "ch34",
+   "type": "single",
+   "question": "Linux 桌面份额低的主要原因是？",
+   "options": [
+    "兼容与优化不足、碎片化严重",
+    "不开源",
+    "收费太高"
+   ],
+   "answer": 0,
+   "explain": "发行版与接口各行其是。"
+  },
+  {
+   "id": "q34-3",
+   "chapterId": "ch34",
+   "type": "single",
+   "question": "高通的主要营利方式是？",
+   "options": [
+    "知识产权与专利授权",
+    "芯片制造",
+    "整机制造"
+   ],
+   "answer": 0,
+   "explain": "净利 53% 来自专利费。"
+  },
+  {
+   "id": "q34-4",
+   "chapterId": "ch34",
+   "type": "single",
+   "question": "应用商店按 3:7 分成的含义是？",
+   "options": [
+    "苹果与开发者三比七分配付费收入",
+    "厂商与运营商",
+    "硬件与软件"
+   ],
+   "answer": 0,
+   "explain": "这是\"生态税\"的具体形式。"
+  },
+  {
+   "id": "q35-1",
+   "chapterId": "ch35",
+   "type": "single",
+   "question": "2019 年全球服务器 CPU 市场销售额约为？",
+   "options": [
+    "450 亿美元",
+    "545 亿美元",
+    "120 亿美元"
+   ],
+   "answer": 0,
+   "explain": "1200 万台 × 2.5 颗 × 1500 美元。"
+  },
+  {
+   "id": "q35-2",
+   "chapterId": "ch35",
+   "type": "single",
+   "question": "\"市场带技术\"的典型成功先例是？",
+   "options": [
+    "航天产业",
+    "家电产业",
+    "纺织业"
+   ],
+   "answer": 0,
+   "explain": "水平领先且形成了自主产业体系。"
+  },
+  {
+   "id": "q35-3",
+   "chapterId": "ch35",
+   "type": "single",
+   "question": "中国计算机事业第一个 30 年的特点是？",
+   "options": [
+    "完全自主研发但无市场化",
+    "完全市场化",
+    "依赖进口"
+   ],
+   "answer": 0,
+   "explain": "从沙子到操作系统都能自造，只服务特定项目。"
+  },
+  {
+   "id": "q35-4",
+   "chapterId": "ch35",
+   "type": "single",
+   "question": "109 丙\"功勋计算机\"的意义是？",
+   "options": [
+    "中国第一台具分时中断系统的计算机",
+    "第一台 PC",
+    "第一台超算"
+   ],
+   "answer": 0,
+   "explain": "32 位、每秒 10 万次，服役 16 年。"
+  },
+  {
+   "id": "q36-1",
+   "chapterId": "ch36",
+   "type": "single",
+   "question": "龙芯第一个十年的成果形式主要是？",
+   "options": [
+    "论文、著作、原型样片、奖项",
+    "量产芯片销售",
+    "整机品牌"
+   ],
+   "answer": 0,
+   "explain": "科研阶段，未市场化。"
+  },
+  {
+   "id": "q36-2",
+   "chapterId": "ch36",
+   "type": "single",
+   "question": "龙芯 1 号系列的定位是？",
+   "options": [
+    "嵌入式、物联网，低功耗",
+    "服务器多核",
+    "台式机高性能"
+   ],
+   "answer": 0,
+   "explain": "三系列中最小的一档。"
+  },
+  {
+   "id": "q36-3",
+   "chapterId": "ch36",
+   "type": "single",
+   "question": "龙芯三条原则的第一条是？",
+   "options": [
+    "先提高通用处理能力，再提高专用处理能力",
+    "先多核再单核",
+    "先工艺再设计"
+   ],
+   "answer": 0,
+   "explain": "日常体验由通用能力决定。"
+  },
+  {
+   "id": "q36-4",
+   "chapterId": "ch36",
+   "type": "single",
+   "question": "3A1000 与 3A4000 的单核分值大致是？",
+   "options": [
+    "2.7 分与 21.1 分",
+    "10 分与 20 分",
+    "2.7 分与 10 分"
+   ],
+   "answer": 0,
+   "explain": "十年提升 10 倍以上。"
+  },
+  {
+   "id": "q37-1",
+   "chapterId": "ch37",
+   "type": "single",
+   "question": "高复杂系统的第一个难点是？",
+   "options": [
+    "因素太多、子系统牵一发动全身，无法简单分治",
+    "原理太难",
+    "缺少资金"
+   ],
+   "answer": 0,
+   "explain": "这是复杂系统区别于普通工程的标志。"
+  },
+  {
+   "id": "q37-2",
+   "chapterId": "ch37",
+   "type": "single",
+   "question": "LoongArch 发布的年份是？",
+   "options": [
+    "2021 年",
+    "2019 年",
+    "2010 年"
+   ],
+   "answer": 0,
+   "explain": "2021 年 4 月 15 日对外发布。"
+  },
+  {
+   "id": "q37-3",
+   "chapterId": "ch37",
+   "type": "single",
+   "question": "LoongArch 的向量扩展包括？",
+   "options": [
+    "LSX 与 LASX",
+    "LVZ 与 LBT",
+    "Base 与 API"
+   ],
+   "answer": 0,
+   "explain": "LVZ 是虚拟化，LBT 是二进制翻译。"
+  },
+  {
+   "id": "q37-4",
+   "chapterId": "ch37",
+   "type": "single",
+   "question": "龙芯对 Meltdown、Spectre 的处理是？",
+   "options": [
+    "从机理上设计规避，实现免疫",
+    "靠打补丁",
+    "不管"
+   ],
+   "answer": 0,
+   "explain": "自研芯片可从根本上消除。"
+  },
+  {
+   "id": "q38-1",
+   "chapterId": "ch38",
+   "type": "single",
+   "question": "龙芯 API 兼容规范要解决什么问题？",
+   "options": [
+    "Linux 生态碎片化导致接口不统一",
+    "硬件散热",
+    "封装成本"
+   ],
+   "answer": 0,
+   "explain": "让各操作系统提供统一 API。"
+  },
+  {
+   "id": "q38-2",
+   "chapterId": "ch38",
+   "type": "single",
+   "question": "神威·太湖之光用的是哪款处理器？",
+   "options": [
+    "申威 26010",
+    "龙芯 3A5000",
+    "鲲鹏"
+   ],
+   "answer": 0,
+   "explain": "2016 年登顶世界最快超算。"
+  },
+  {
+   "id": "q38-3",
+   "chapterId": "ch38",
+   "type": "single",
+   "question": "龙芯高校开源计划开放的两款核是？",
+   "options": [
+    "GS132 与 GS232",
+    "GS464v 与 3A4000",
+    "A72 与 A53"
+   ],
+   "answer": 0,
+   "explain": "面向高校与学术界开源。"
+  },
+  {
+   "id": "q38-4",
+   "chapterId": "ch38",
+   "type": "single",
+   "question": "关于\"弯道超车\"，书中的观点是？",
+   "options": [
+    "没有捷径，只能直道追赶",
+    "可以靠工艺超车",
+    "可以靠授权超车"
+   ],
+   "answer": 0,
+   "explain": "表面的直道常是更弯的弯道。"
+  }
+ ],
+ "flashcards": [
+  {
+   "id": "f01-1",
+   "chapterId": "ch01",
+   "front": "CPU 由哪两部分组成？",
+   "back": "运算器 + 控制器",
+   "tags": [
+    "第 1 章"
+   ]
+  },
+  {
+   "id": "f01-2",
+   "chapterId": "ch01",
+   "front": "冯·诺依曼体系结构的核心思想？",
+   "back": "程序和数据都存在存储器中，由控制器逐条取指执行",
+   "tags": [
+    "第 1 章"
+   ]
+  },
+  {
+   "id": "f01-3",
+   "chapterId": "ch01",
+   "front": "通用 CPU 和专用 CPU 的区别？",
+   "back": "通用不限场景、跑通用系统；专用面向单一场景，可为该场景牺牲通用功能",
+   "tags": [
+    "第 1 章"
+   ]
+  },
+  {
+   "id": "f01-4",
+   "chapterId": "ch01",
+   "front": "计算机五大部件？",
+   "back": "运算器、控制器、存储器、输入设备、输出设备",
+   "tags": [
+    "第 1 章"
+   ]
+  },
+  {
+   "id": "f01-5",
+   "chapterId": "ch01",
+   "front": "CPU 为什么是\"国之重器\"？",
+   "back": "高端设计技术集中、进口依赖带来利润、知识产权与信息安全三重风险",
+   "tags": [
+    "第 1 章"
+   ]
+  },
+  {
+   "id": "f02-1",
+   "chapterId": "ch02",
+   "front": "性能的本质定义？",
+   "back": "单位时间内完成的计算量",
+   "tags": [
+    "第 2 章"
+   ]
+  },
+  {
+   "id": "f02-2",
+   "chapterId": "ch02",
+   "front": "主频的上限由什么决定？",
+   "back": "数据通路时延加运算时延，即一条指令的最短执行时间",
+   "tags": [
+    "第 2 章"
+   ]
+  },
+  {
+   "id": "f02-3",
+   "chapterId": "ch02",
+   "front": "CHN-2 为什么主频低还能同性能？",
+   "back": "把并行度提高到 4 倍，用宽度换频率",
+   "tags": [
+    "第 2 章"
+   ]
+  },
+  {
+   "id": "f02-4",
+   "chapterId": "ch02",
+   "front": "MIPS 的缺陷？",
+   "back": "不同机器指令语义强度不同，条数不可比",
+   "tags": [
+    "第 2 章"
+   ]
+  },
+  {
+   "id": "f02-5",
+   "chapterId": "ch02",
+   "front": "SPEC CPU 的两大局限？",
+   "back": "编译器影响大；测试集偏计算型，可被堆硬件刷分",
+   "tags": [
+    "第 2 章"
+   ]
+  },
+  {
+   "id": "f02-6",
+   "chapterId": "ch02",
+   "front": "为什么不推荐 UnixBench？",
+   "back": "1995 年的老测试项，2012 年后停更，与现代表述脱节",
+   "tags": [
+    "第 2 章"
+   ]
+  },
+  {
+   "id": "f03-1",
+   "chapterId": "ch03",
+   "front": "ENIAC 的规模与速度？",
+   "back": "17468 个电子管，每秒 5000 次加法",
+   "tags": [
+    "第 3 章"
+   ]
+  },
+  {
+   "id": "f03-2",
+   "chapterId": "ch03",
+   "front": "Intel 4004 的关键数字？",
+   "back": "1971 年，2250 个晶体管，10 微米工艺，每秒 6 万次",
+   "tags": [
+    "第 3 章"
+   ]
+  },
+  {
+   "id": "f03-3",
+   "chapterId": "ch03",
+   "front": "推动 CPU 发展的三股力量？",
+   "back": "应用需求、生产工艺、科学探索",
+   "tags": [
+    "第 3 章"
+   ]
+  },
+  {
+   "id": "f03-4",
+   "chapterId": "ch03",
+   "front": "为什么说 CPU 原理占计算机原理的大部分？",
+   "back": "体系结构以 CPU 为中心，存储与 IO 都围绕它组织",
+   "tags": [
+    "第 3 章"
+   ]
+  },
+  {
+   "id": "f03-5",
+   "chapterId": "ch03",
+   "front": "开源 CPU 的代表项目？",
+   "back": "OpenRISC、RISC-V、OpenSPARC、OpenPOWER",
+   "tags": [
+    "第 3 章"
+   ]
+  },
+  {
+   "id": "f03-6",
+   "chapterId": "ch03",
+   "front": "\"一生一芯\"证明了什么？",
+   "back": "本科生团队可以完成 64 位芯片设计与流片，入门门槛并非高不可攀",
+   "tags": [
+    "第 3 章"
+   ]
+  },
+  {
+   "id": "f04-1",
+   "chapterId": "ch04",
+   "front": "指令集的另一个名称？",
+   "back": "指令系统架构（ISA）",
+   "tags": [
+    "第 4 章"
+   ]
+  },
+  {
+   "id": "f04-2",
+   "chapterId": "ch04",
+   "front": "兼容机的定义？",
+   "back": "能识别相同指令编码、运行相同软件的计算机",
+   "tags": [
+    "第 4 章"
+   ]
+  },
+  {
+   "id": "f04-3",
+   "chapterId": "ch04",
+   "front": "向下兼容的具体约束？",
+   "back": "只增不删、不改老指令功能",
+   "tags": [
+    "第 4 章"
+   ]
+  },
+  {
+   "id": "f04-4",
+   "chapterId": "ch04",
+   "front": "System/360 的历史地位？",
+   "back": "1964 年 IBM 推出，\"兼容机\"概念的始祖",
+   "tags": [
+    "第 4 章"
+   ]
+  },
+  {
+   "id": "f04-5",
+   "chapterId": "ch04",
+   "front": "指令集如何控制生态？",
+   "back": "通过专利与授权设定准入门槛，决定谁能造兼容 CPU",
+   "tags": [
+    "第 4 章"
+   ]
+  },
+  {
+   "id": "f04-6",
+   "chapterId": "ch04",
+   "front": "LoongArch 的四个组成部分？",
+   "back": "基础、二进制翻译扩展 LBT、虚拟化扩展 LVZ、向量扩展 LSX/LASX",
+   "tags": [
+    "第 4 章"
+   ]
+  },
+  {
+   "id": "f05-1",
+   "chapterId": "ch05",
+   "front": "CISC 与 RISC 的核心差别？",
+   "back": "CISC 指令多而复杂、长度不一；RISC 指令少而规整、长度统一",
+   "tags": [
+    "第 5 章"
+   ]
+  },
+  {
+   "id": "f05-2",
+   "chapterId": "ch05",
+   "front": "RISC 的代表作起点？",
+   "back": "IBM 801，1975 年开始研制",
+   "tags": [
+    "第 5 章"
+   ]
+  },
+  {
+   "id": "f05-3",
+   "chapterId": "ch05",
+   "front": "指令膨胀的三大弊端？",
+   "back": "译码电路复杂、功能重复、妨碍流水线与编译调度",
+   "tags": [
+    "第 5 章"
+   ]
+  },
+  {
+   "id": "f05-4",
+   "chapterId": "ch05",
+   "front": "μOP 是什么？",
+   "back": "CISC 指令预译码后生成的内部微指令，对软件不可见",
+   "tags": [
+    "第 5 章"
+   ]
+  },
+  {
+   "id": "f05-5",
+   "chapterId": "ch05",
+   "front": "汇编器的作用？",
+   "back": "把汇编源码转成二进制机器码",
+   "tags": [
+    "第 5 章"
+   ]
+  },
+  {
+   "id": "f05-6",
+   "chapterId": "ch05",
+   "front": "高级语言\"平台无关\"的含义？",
+   "back": "换指令集只需用新编译器重编，不必重写源码",
+   "tags": [
+    "第 5 章"
+   ]
+  },
+  {
+   "id": "f06-1",
+   "chapterId": "ch06",
+   "front": "微结构的定义？",
+   "back": "一个 CPU 的电路设计，即指令集的硬件实现方案",
+   "tags": [
+    "第 6 章"
+   ]
+  },
+  {
+   "id": "f06-2",
+   "chapterId": "ch06",
+   "front": "同一微结构衍生型号的四种方式？",
+   "back": "改参数、裁模块、多核组合、换工艺并分档定频",
+   "tags": [
+    "第 6 章"
+   ]
+  },
+  {
+   "id": "f06-3",
+   "chapterId": "ch06",
+   "front": "IP 核像什么软件概念？",
+   "back": "函数：一次定义，多次调用",
+   "tags": [
+    "第 6 章"
+   ]
+  },
+  {
+   "id": "f06-4",
+   "chapterId": "ch06",
+   "front": "软 IP 与硬 IP？",
+   "back": "软 IP 是 HDL 功能描述；硬 IP 是含布局布线的晶体管版图",
+   "tags": [
+    "第 6 章"
+   ]
+  },
+  {
+   "id": "f06-5",
+   "chapterId": "ch06",
+   "front": "SoC 是什么？",
+   "back": "片上系统，一块芯片集成 CPU 与多种外设，接近完整计算机",
+   "tags": [
+    "第 6 章"
+   ]
+  },
+  {
+   "id": "f06-6",
+   "chapterId": "ch06",
+   "front": "\"CPU 搬运工\"指什么？",
+   "back": "买现成 IP 组合成芯片、不掌握核心设计的厂商",
+   "tags": [
+    "第 6 章"
+   ]
+  },
+  {
+   "id": "f07-1",
+   "chapterId": "ch07",
+   "front": "功耗的定义与单位？",
+   "back": "单位时间消耗的电能，单位瓦特",
+   "tags": [
+    "第 7 章"
+   ]
+  },
+  {
+   "id": "f07-2",
+   "chapterId": "ch07",
+   "front": "四类 CPU 的典型功耗？",
+   "back": "嵌入式毫瓦级、手机不超 10W、台式约 50W、服务器可超 100W",
+   "tags": [
+    "第 7 章"
+   ]
+  },
+  {
+   "id": "f07-3",
+   "chapterId": "ch07",
+   "front": "降功耗的三条路径？",
+   "back": "先进工艺、操作系统电源管理、动态调频调压",
+   "tags": [
+    "第 7 章"
+   ]
+  },
+  {
+   "id": "f07-4",
+   "chapterId": "ch07",
+   "front": "为什么风扇是问题？",
+   "back": "机械件有噪声且易损坏，低功耗才能省掉它",
+   "tags": [
+    "第 7 章"
+   ]
+  },
+  {
+   "id": "f07-5",
+   "chapterId": "ch07",
+   "front": "睿频是什么？",
+   "back": "按负载动态升降频率的功耗管理机制",
+   "tags": [
+    "第 7 章"
+   ]
+  },
+  {
+   "id": "f08-1",
+   "chapterId": "ch08",
+   "front": "摩尔定律原始表述？",
+   "back": "集成电路晶体管数量每年翻一倍（1965）",
+   "tags": [
+    "第 8 章"
+   ]
+  },
+  {
+   "id": "f08-2",
+   "chapterId": "ch08",
+   "front": "1975 年的修正？",
+   "back": "改为每两年翻一倍",
+   "tags": [
+    "第 8 章"
+   ]
+  },
+  {
+   "id": "f08-3",
+   "chapterId": "ch08",
+   "front": "Tick 与 Tock 各做什么？",
+   "back": "Tick 换制造工艺，Tock 换微结构",
+   "tags": [
+    "第 8 章"
+   ]
+  },
+  {
+   "id": "f08-4",
+   "chapterId": "ch08",
+   "front": "为什么工艺与架构要分开迭代？",
+   "back": "分解难度、控制风险、缩短上市周期",
+   "tags": [
+    "第 8 章"
+   ]
+  },
+  {
+   "id": "f08-5",
+   "chapterId": "ch08",
+   "front": "性能放缓的三个原因？",
+   "back": "需求饱和、市场垄断、体系结构缺乏新理论",
+   "tags": [
+    "第 8 章"
+   ]
+  },
+  {
+   "id": "f08-6",
+   "chapterId": "ch08",
+   "front": "摩尔定律的性质？",
+   "back": "人为总结的经验规律，不是物理定律",
+   "tags": [
+    "第 8 章"
+   ]
+  },
+  {
+   "id": "f09-1",
+   "chapterId": "ch09",
+   "front": "异构计算的定义？",
+   "back": "不同类型计算单元分工合作完成计算任务",
+   "tags": [
+    "第 9 章"
+   ]
+  },
+  {
+   "id": "f09-2",
+   "chapterId": "ch09",
+   "front": "异构的两个基本思想？",
+   "back": "专人干专事；把软件功能交给硬件实现",
+   "tags": [
+    "第 9 章"
+   ]
+  },
+  {
+   "id": "f09-3",
+   "chapterId": "ch09",
+   "front": "GPU 为什么擅长图形？",
+   "back": "批量并行生成像素点，一条指令处理大量数据",
+   "tags": [
+    "第 9 章"
+   ]
+  },
+  {
+   "id": "f09-4",
+   "chapterId": "ch09",
+   "front": "协处理器是什么？",
+   "back": "受 CPU 调度、承担特定功能的专用处理器",
+   "tags": [
+    "第 9 章"
+   ]
+  },
+  {
+   "id": "f09-5",
+   "chapterId": "ch09",
+   "front": "big.little 的两种核？",
+   "back": "高性能大核与低功耗小核，按负载调度",
+   "tags": [
+    "第 9 章"
+   ]
+  },
+  {
+   "id": "f10-1",
+   "chapterId": "ch10",
+   "front": "后门的定义？",
+   "back": "绕过正常安全机制的隐秘通道，通常为有意设置",
+   "tags": [
+    "第 10 章"
+   ]
+  },
+  {
+   "id": "f10-2",
+   "chapterId": "ch10",
+   "front": "漏洞的定义？",
+   "back": "设计缺陷，可被攻击者利用实现非正常功能",
+   "tags": [
+    "第 10 章"
+   ]
+  },
+  {
+   "id": "f10-3",
+   "chapterId": "ch10",
+   "front": "为什么测试找不全漏洞？",
+   "back": "输入与执行路径近乎无限，穷尽测试不可能",
+   "tags": [
+    "第 10 章"
+   ]
+  },
+  {
+   "id": "f10-4",
+   "chapterId": "ch10",
+   "front": "Meltdown 的 CVE 编号？",
+   "back": "CVE-2017-5754",
+   "tags": [
+    "第 10 章"
+   ]
+  },
+  {
+   "id": "f10-5",
+   "chapterId": "ch10",
+   "front": "Spectre 的两个 CVE？",
+   "back": "CVE-2017-5753、CVE-2017-5715",
+   "tags": [
+    "第 10 章"
+   ]
+  },
+  {
+   "id": "f10-6",
+   "chapterId": "ch10",
+   "front": "Intel ME 是什么？",
+   "back": "独立于 CPU 的管理引擎，含微型 CPU 与系统，可远程管理机器",
+   "tags": [
+    "第 10 章"
+   ]
+  },
+  {
+   "id": "f11-1",
+   "chapterId": "ch11",
+   "front": "CPU 的三门基础理论？",
+   "back": "布尔代数、数字电路设计、计算机系统结构",
+   "tags": [
+    "第 11 章"
+   ]
+  },
+  {
+   "id": "f11-2",
+   "chapterId": "ch11",
+   "front": "数字电路设计用什么语言？",
+   "back": "硬件描述语言，如 Verilog、VHDL",
+   "tags": [
+    "第 11 章"
+   ]
+  },
+  {
+   "id": "f11-3",
+   "chapterId": "ch11",
+   "front": "DFT 的作用？",
+   "back": "增加可控可观测的测试接口，便于验证与排错",
+   "tags": [
+    "第 11 章"
+   ]
+  },
+  {
+   "id": "f11-4",
+   "chapterId": "ch11",
+   "front": "电路验证常用什么平台？",
+   "back": "FPGA，用设计源码模拟真实芯片",
+   "tags": [
+    "第 11 章"
+   ]
+  },
+  {
+   "id": "f11-5",
+   "chapterId": "ch11",
+   "front": "电路为什么难分而治之？",
+   "back": "模块高度耦合、网状连接、并行工作",
+   "tags": [
+    "第 11 章"
+   ]
+  },
+  {
+   "id": "f11-6",
+   "chapterId": "ch11",
+   "front": "\"有状态\"模块难在哪？",
+   "back": "输出还取决于内部存储，测试要覆盖输入顺序与时间维度",
+   "tags": [
+    "第 11 章"
+   ]
+  },
+  {
+   "id": "f12-1",
+   "chapterId": "ch12",
+   "front": "EDA 全称？",
+   "back": "电子设计自动化",
+   "tags": [
+    "第 12 章"
+   ]
+  },
+  {
+   "id": "f12-2",
+   "chapterId": "ch12",
+   "front": "RTL 是什么？",
+   "back": "寄存器传输级模型，描述数据在寄存器间的流动与加工",
+   "tags": [
+    "第 12 章"
+   ]
+  },
+  {
+   "id": "f12-3",
+   "chapterId": "ch12",
+   "front": "逻辑综合做什么？",
+   "back": "把 RTL 自动转换成门级网表",
+   "tags": [
+    "第 12 章"
+   ]
+  },
+  {
+   "id": "f12-4",
+   "chapterId": "ch12",
+   "front": "版图是什么？",
+   "back": "确定器件位置与连线的最终设计文件，交付流片",
+   "tags": [
+    "第 12 章"
+   ]
+  },
+  {
+   "id": "f12-5",
+   "chapterId": "ch12",
+   "front": "开源仿真器与波形工具？",
+   "back": "iverilog 与 gtkwave",
+   "tags": [
+    "第 12 章"
+   ]
+  },
+  {
+   "id": "f12-6",
+   "chapterId": "ch12",
+   "front": "EDA 三巨头？",
+   "back": "Synopsys、Cadence、Mentor",
+   "tags": [
+    "第 12 章"
+   ]
+  },
+  {
+   "id": "f13-1",
+   "chapterId": "ch13",
+   "front": "反相器由几个晶体管组成？",
+   "back": "两个",
+   "tags": [
+    "第 13 章"
+   ]
+  },
+  {
+   "id": "f13-2",
+   "chapterId": "ch13",
+   "front": "N 进制的两条基本规则？",
+   "back": "字符表 0 到 N-1；第 n 位权重为 N 的 n 次方",
+   "tags": [
+    "第 13 章"
+   ]
+  },
+  {
+   "id": "f13-3",
+   "chapterId": "ch13",
+   "front": "负数的补码怎么求？",
+   "back": "原码按位取反再加一",
+   "tags": [
+    "第 13 章"
+   ]
+  },
+  {
+   "id": "f13-4",
+   "chapterId": "ch13",
+   "front": "为什么 CPU 没有减法器？",
+   "back": "补码把减法化成了加法",
+   "tags": [
+    "第 13 章"
+   ]
+  },
+  {
+   "id": "f13-5",
+   "chapterId": "ch13",
+   "front": "IEEE 754 存浮点数的哪两部分？",
+   "back": "底数（有效数字）与指数",
+   "tags": [
+    "第 13 章"
+   ]
+  },
+  {
+   "id": "f13-6",
+   "chapterId": "ch13",
+   "front": "计算机能表示所有实数吗？",
+   "back": "不能，只能表示有限小数",
+   "tags": [
+    "第 13 章"
+   ]
+  },
+  {
+   "id": "f14-1",
+   "chapterId": "ch14",
+   "front": "1 位加法器有几个输入输出？",
+   "back": "3 个输入（A、B、Cin），2 个输出（S、Cout）",
+   "tags": [
+    "第 14 章"
+   ]
+  },
+  {
+   "id": "f14-2",
+   "chapterId": "ch14",
+   "front": "乘法器的基本算法？",
+   "back": "移位加",
+   "tags": [
+    "第 14 章"
+   ]
+  },
+  {
+   "id": "f14-3",
+   "chapterId": "ch14",
+   "front": "ALU 的四类常见功能？",
+   "back": "算术、移位、逻辑、比较（另有地址运算）",
+   "tags": [
+    "第 14 章"
+   ]
+  },
+  {
+   "id": "f14-4",
+   "chapterId": "ch14",
+   "front": "寄存器与存储器的区别？",
+   "back": "寄存器在片内、容量小、存中间数据；存储器在片外、容量大、存程序与结果",
+   "tags": [
+    "第 14 章"
+   ]
+  },
+  {
+   "id": "f14-5",
+   "chapterId": "ch14",
+   "front": "寄存器堆的三个端口？",
+   "back": "地址端口、读写控制端口、数据端口",
+   "tags": [
+    "第 14 章"
+   ]
+  },
+  {
+   "id": "f14-6",
+   "chapterId": "ch14",
+   "front": "标志位寄存器存什么？",
+   "back": "运算结果的特征，如是否为零、是否溢出",
+   "tags": [
+    "第 14 章"
+   ]
+  },
+  {
+   "id": "f15-1",
+   "chapterId": "ch15",
+   "front": "流水线的定义？",
+   "back": "把指令切成多段，由不同硬件同时处理多条指令",
+   "tags": [
+    "第 15 章"
+   ]
+  },
+  {
+   "id": "f15-2",
+   "chapterId": "ch15",
+   "front": "四级流水线的四个段？",
+   "back": "算地址 AG、取指 IF、执行 EX、显示 DC",
+   "tags": [
+    "第 15 章"
+   ]
+  },
+  {
+   "id": "f15-3",
+   "chapterId": "ch15",
+   "front": "为什么两条指令只要 5 拍？",
+   "back": "不同段用不同硬件，可叠加执行",
+   "tags": [
+    "第 15 章"
+   ]
+  },
+  {
+   "id": "f15-4",
+   "chapterId": "ch15",
+   "front": "加深流水线的两个代价？",
+   "back": "面积功耗上升；单条指令延迟变长",
+   "tags": [
+    "第 15 章"
+   ]
+  },
+  {
+   "id": "f15-5",
+   "chapterId": "ch15",
+   "front": "龙芯 3A4000 的流水线级数？",
+   "back": "12 级",
+   "tags": [
+    "第 15 章"
+   ]
+  },
+  {
+   "id": "f15-6",
+   "chapterId": "ch15",
+   "front": "吞吐率与延迟的区别？",
+   "back": "单位时间完成的任务量 vs 单条任务从开始到结束的时间",
+   "tags": [
+    "第 15 章"
+   ]
+  },
+  {
+   "id": "f16-1",
+   "chapterId": "ch16",
+   "front": "动态流水线解决什么问题？",
+   "back": "消除指令相关性造成的停顿",
+   "tags": [
+    "第 16 章"
+   ]
+  },
+  {
+   "id": "f16-2",
+   "chapterId": "ch16",
+   "front": "两种指令相关性？",
+   "back": "数据相关（RAW 等）与结构相关（抢部件）",
+   "tags": [
+    "第 16 章"
+   ]
+  },
+  {
+   "id": "f16-3",
+   "chapterId": "ch16",
+   "front": "Tomasulo 三个核心部件？",
+   "back": "保留站、重命名寄存器、ROB",
+   "tags": [
+    "第 16 章"
+   ]
+  },
+  {
+   "id": "f16-4",
+   "chapterId": "ch16",
+   "front": "乱序执行的三句话？",
+   "back": "有序取指、乱序执行、有序提交",
+   "tags": [
+    "第 16 章"
+   ]
+  },
+  {
+   "id": "f16-5",
+   "chapterId": "ch16",
+   "front": "CDB 的作用？",
+   "back": "把计算结果广播给所有等待它的保留站与寄存器",
+   "tags": [
+    "第 16 章"
+   ]
+  },
+  {
+   "id": "f16-6",
+   "chapterId": "ch16",
+   "front": "多发射与多核的区别？",
+   "back": "前者加宽一条流水线，后者是多个独立流水线",
+   "tags": [
+    "第 16 章"
+   ]
+  },
+  {
+   "id": "f17-1",
+   "chapterId": "ch17",
+   "front": "LD 与 ST 的方向？",
+   "back": "LD 内存到寄存器；ST 寄存器到内存",
+   "tags": [
+    "第 17 章"
+   ]
+  },
+  {
+   "id": "f17-2",
+   "chapterId": "ch17",
+   "front": "容量单位换算？",
+   "back": "1024B=1KB，1024KB=1MB，1024MB=1GB，1024GB=1TB",
+   "tags": [
+    "第 17 章"
+   ]
+  },
+  {
+   "id": "f17-3",
+   "chapterId": "ch17",
+   "front": "数据局部性是什么？",
+   "back": "CPU 反复访问的内存只占很小一部分",
+   "tags": [
+    "第 17 章"
+   ]
+  },
+  {
+   "id": "f17-4",
+   "chapterId": "ch17",
+   "front": "多级缓存的取舍？",
+   "back": "近的快而小，远的慢而大，兼顾成本与速度",
+   "tags": [
+    "第 17 章"
+   ]
+  },
+  {
+   "id": "f17-5",
+   "chapterId": "ch17",
+   "front": "虚拟内存的两种实现？",
+   "back": "分段与分页",
+   "tags": [
+    "第 17 章"
+   ]
+  },
+  {
+   "id": "f17-6",
+   "chapterId": "ch17",
+   "front": "TLB 的作用？",
+   "back": "把虚拟地址翻译成物理地址",
+   "tags": [
+    "第 17 章"
+   ]
+  },
+  {
+   "id": "f18-1",
+   "chapterId": "ch18",
+   "front": "特权级至少分几级？",
+   "back": "两级：操作系统级与应用级",
+   "tags": [
+    "第 18 章"
+   ]
+  },
+  {
+   "id": "f18-2",
+   "chapterId": "ch18",
+   "front": "特权指令的例子？",
+   "back": "设置 CPU 运行等级的指令",
+   "tags": [
+    "第 18 章"
+   ]
+  },
+  {
+   "id": "f18-3",
+   "chapterId": "ch18",
+   "front": "中断的常见来源？",
+   "back": "键盘、网卡、定时器等外围设备",
+   "tags": [
+    "第 18 章"
+   ]
+  },
+  {
+   "id": "f18-4",
+   "chapterId": "ch18",
+   "front": "中断服务程序（ISR）做什么？",
+   "back": "判断中断来源、接收数据、处理后返回",
+   "tags": [
+    "第 18 章"
+   ]
+  },
+  {
+   "id": "f18-5",
+   "chapterId": "ch18",
+   "front": "I/O 三件套？",
+   "back": "外设总线、I/O 指令、中断",
+   "tags": [
+    "第 18 章"
+   ]
+  },
+  {
+   "id": "f18-6",
+   "chapterId": "ch18",
+   "front": "DMA 控制器属于哪类部件？",
+   "back": "协处理器",
+   "tags": [
+    "第 18 章"
+   ]
+  },
+  {
+   "id": "f19-1",
+   "chapterId": "ch19",
+   "front": "应用的三个组成部分？",
+   "back": "指令序列、库函数、系统调用",
+   "tags": [
+    "第 19 章"
+   ]
+  },
+  {
+   "id": "f19-2",
+   "chapterId": "ch19",
+   "front": "龙芯的系统调用指令？",
+   "back": "syscall",
+   "tags": [
+    "第 19 章"
+   ]
+  },
+  {
+   "id": "f19-3",
+   "chapterId": "ch19",
+   "front": "系统调用与库函数的本质区别？",
+   "back": "是否切换特权级、进入操作系统执行",
+   "tags": [
+    "第 19 章"
+   ]
+  },
+  {
+   "id": "f19-4",
+   "chapterId": "ch19",
+   "front": "系统调用能提供哪三类典型服务？",
+   "back": "查资源使用、读外设数据、取当前时间",
+   "tags": [
+    "第 19 章"
+   ]
+  },
+  {
+   "id": "f19-5",
+   "chapterId": "ch19",
+   "front": "为什么系统调用要做权限检查？",
+   "back": "防止应用越权访问核心资源",
+   "tags": [
+    "第 19 章"
+   ]
+  },
+  {
+   "id": "f20-1",
+   "chapterId": "ch20",
+   "front": "标量与向量的区别？",
+   "back": "一组操作数是一个数还是多个数",
+   "tags": [
+    "第 20 章"
+   ]
+  },
+  {
+   "id": "f20-2",
+   "chapterId": "ch20",
+   "front": "128 位向量寄存器装几个 32 位数据？",
+   "back": "4 个",
+   "tags": [
+    "第 20 章"
+   ]
+  },
+  {
+   "id": "f20-3",
+   "chapterId": "ch20",
+   "front": "向量指令的代价？",
+   "back": "更多寄存器与并行运算单元，占面积",
+   "tags": [
+    "第 20 章"
+   ]
+  },
+  {
+   "id": "f20-4",
+   "chapterId": "ch20",
+   "front": "Intel 最早的向量指令扩展？",
+   "back": "Pentium MMX，57 条多媒体指令",
+   "tags": [
+    "第 20 章"
+   ]
+  },
+  {
+   "id": "f20-5",
+   "chapterId": "ch20",
+   "front": "硬件加密的两大好处？",
+   "back": "速度快几十倍；抗篡改、内生安全",
+   "tags": [
+    "第 20 章"
+   ]
+  },
+  {
+   "id": "f21-1",
+   "chapterId": "ch21",
+   "front": "虚拟化的三个典型用途？",
+   "back": "兼容老系统、开发调试操作系统、云计算基础",
+   "tags": [
+    "第 21 章"
+   ]
+  },
+  {
+   "id": "f21-2",
+   "chapterId": "ch21",
+   "front": "硬件虚拟化的首次引入？",
+   "back": "1972 年 IBM System/370",
+   "tags": [
+    "第 21 章"
+   ]
+  },
+  {
+   "id": "f21-3",
+   "chapterId": "ch21",
+   "front": "龙芯硬件虚拟化的效率？",
+   "back": "虚拟机性能达物理机 95% 以上",
+   "tags": [
+    "第 21 章"
+   ]
+  },
+  {
+   "id": "f21-4",
+   "chapterId": "ch21",
+   "front": "可信计算的\"老三样\"指什么？",
+   "back": "杀病毒、防火墙、入侵检测",
+   "tags": [
+    "第 21 章"
+   ]
+  },
+  {
+   "id": "f21-5",
+   "chapterId": "ch21",
+   "front": "TPCM 与 TCM 分别是什么？",
+   "back": "可信平台控制模块与可信密码模块",
+   "tags": [
+    "第 21 章"
+   ]
+  },
+  {
+   "id": "f21-6",
+   "chapterId": "ch21",
+   "front": "可信计算为什么算\"白名单\"？",
+   "back": "只有度量通过的资源才允许运行",
+   "tags": [
+    "第 21 章"
+   ]
+  },
+  {
+   "id": "f22-1",
+   "chapterId": "ch22",
+   "front": "多核、多路、SMT 的区别？",
+   "back": "芯片内多核、主板上多芯片、核内多线程环境",
+   "tags": [
+    "第 22 章"
+   ]
+  },
+  {
+   "id": "f22-2",
+   "chapterId": "ch22",
+   "front": "CPU 总数怎么算？",
+   "back": "路数 × 每芯片核数",
+   "tags": [
+    "第 22 章"
+   ]
+  },
+  {
+   "id": "f22-3",
+   "chapterId": "ch22",
+   "front": "SMT 的性价比数据？",
+   "back": "不到 10% 晶体管换平均 60% 性能提升",
+   "tags": [
+    "第 22 章"
+   ]
+  },
+  {
+   "id": "f22-4",
+   "chapterId": "ch22",
+   "front": "Amdahl 定律公式？",
+   "back": "S = 1/(1-a+a/n)",
+   "tags": [
+    "第 22 章"
+   ]
+  },
+  {
+   "id": "f22-5",
+   "chapterId": "ch22",
+   "front": "SMP 与 NUMA 的核心差别？",
+   "back": "所有访问等速 vs 本地快远程慢",
+   "tags": [
+    "第 22 章"
+   ]
+  },
+  {
+   "id": "f22-6",
+   "chapterId": "ch22",
+   "front": "原子指令的作用？",
+   "back": "让一段操作独占执行，避免多核竞争出错",
+   "tags": [
+    "第 22 章"
+   ]
+  },
+  {
+   "id": "f23-1",
+   "chapterId": "ch23",
+   "front": "系统总线与外设总线的区别？",
+   "back": "前者连 CPU 与内存求高速，后者连外设",
+   "tags": [
+    "第 23 章"
+   ]
+  },
+  {
+   "id": "f23-2",
+   "chapterId": "ch23",
+   "front": "BGA 与 LGA 的差别？",
+   "back": "焊球焊接 vs 扣架压接可更换",
+   "tags": [
+    "第 23 章"
+   ]
+  },
+  {
+   "id": "f23-3",
+   "chapterId": "ch23",
+   "front": "PCB 的发明者与年份？",
+   "back": "保罗·艾斯勒，1936 年",
+   "tags": [
+    "第 23 章"
+   ]
+  },
+  {
+   "id": "f23-4",
+   "chapterId": "ch23",
+   "front": "BIOS 存在哪里？",
+   "back": "主板上的 ROM 芯片",
+   "tags": [
+    "第 23 章"
+   ]
+  },
+  {
+   "id": "f23-5",
+   "chapterId": "ch23",
+   "front": "按键事件的第 4 步做了什么？",
+   "back": "中断状态随指令进入 ROB，触发撤销未提交指令",
+   "tags": [
+    "第 23 章"
+   ]
+  },
+  {
+   "id": "f23-6",
+   "chapterId": "ch23",
+   "front": "死机的三大根源？",
+   "back": "操作系统 bug、主板硬件不稳、外设故障",
+   "tags": [
+    "第 23 章"
+   ]
+  },
+  {
+   "id": "f24-1",
+   "chapterId": "ch24",
+   "front": "Fabless 的含义？",
+   "back": "无晶圆厂，只设计不生产",
+   "tags": [
+    "第 24 章"
+   ]
+  },
+  {
+   "id": "f24-2",
+   "chapterId": "ch24",
+   "front": "版图的行业文件格式？",
+   "back": "GDS2",
+   "tags": [
+    "第 24 章"
+   ]
+  },
+  {
+   "id": "f24-3",
+   "chapterId": "ch24",
+   "front": "tapeout 为什么译成\"流片\"？",
+   "back": "早年用磁带顺序交付 GDS2",
+   "tags": [
+    "第 24 章"
+   ]
+  },
+  {
+   "id": "f24-4",
+   "chapterId": "ch24",
+   "front": "\"上知天文\"指什么？",
+   "back": "懂操作系统、编译器与应用生态",
+   "tags": [
+    "第 24 章"
+   ]
+  },
+  {
+   "id": "f24-5",
+   "chapterId": "ch24",
+   "front": "\"下知地理\"指什么？",
+   "back": "懂电路逻辑、半导体工艺与材料",
+   "tags": [
+    "第 24 章"
+   ]
+  },
+  {
+   "id": "f24-6",
+   "chapterId": "ch24",
+   "front": "纳米工艺影响什么？",
+   "back": "功耗与工作频率",
+   "tags": [
+    "第 24 章"
+   ]
+  },
+  {
+   "id": "f25-1",
+   "chapterId": "ch25",
+   "front": "电子级硅的纯度？",
+   "back": "99.9999%，百万原子最多一个杂质",
+   "tags": [
+    "第 25 章"
+   ]
+  },
+  {
+   "id": "f25-2",
+   "chapterId": "ch25",
+   "front": "硅锭的典型质量？",
+   "back": "约 100kg",
+   "tags": [
+    "第 25 章"
+   ]
+  },
+  {
+   "id": "f25-3",
+   "chapterId": "ch25",
+   "front": "光刻的四步？",
+   "back": "涂胶、盖掩膜、曝光、溶胶",
+   "tags": [
+    "第 25 章"
+   ]
+  },
+  {
+   "id": "f25-4",
+   "chapterId": "ch25",
+   "front": "芯片制造的三种基本手法？",
+   "back": "生长、挖掉、掺杂",
+   "tags": [
+    "第 25 章"
+   ]
+  },
+  {
+   "id": "f25-5",
+   "chapterId": "ch25",
+   "front": "die 是什么？",
+   "back": "切割后含一颗芯片完整电路的小片",
+   "tags": [
+    "第 25 章"
+   ]
+  },
+  {
+   "id": "f25-6",
+   "chapterId": "ch25",
+   "front": "一颗芯片的生产周期？",
+   "back": "通常 3 个月以上",
+   "tags": [
+    "第 25 章"
+   ]
+  },
+  {
+   "id": "f26-1",
+   "chapterId": "ch26",
+   "front": "模拟电路六大基础器件？",
+   "back": "电阻、电容、电感、二极管、三极管、FET",
+   "tags": [
+    "第 26 章"
+   ]
+  },
+  {
+   "id": "f26-2",
+   "chapterId": "ch26",
+   "front": "电阻的材料与调值方式？",
+   "back": "多晶硅薄层，靠厚度与掺杂调节",
+   "tags": [
+    "第 26 章"
+   ]
+  },
+  {
+   "id": "f26-3",
+   "chapterId": "ch26",
+   "front": "PN 结正向导通的条件？",
+   "back": "P 区电压高于 N 区（阳极高于阴极）",
+   "tags": [
+    "第 26 章"
+   ]
+  },
+  {
+   "id": "f26-4",
+   "chapterId": "ch26",
+   "front": "FET 与三极管的控制方式？",
+   "back": "FET 靠电压，三极管靠电流",
+   "tags": [
+    "第 26 章"
+   ]
+  },
+  {
+   "id": "f26-5",
+   "chapterId": "ch26",
+   "front": "CMOS 的\"C\"是什么意思？",
+   "back": "互补，一对沟道相反的 MOS 管",
+   "tags": [
+    "第 26 章"
+   ]
+  },
+  {
+   "id": "f26-6",
+   "chapterId": "ch26",
+   "front": "组合电路与时序电路的区别？",
+   "back": "输出是否依赖内部存储状态",
+   "tags": [
+    "第 26 章"
+   ]
+  },
+  {
+   "id": "f27-1",
+   "chapterId": "ch27",
+   "front": "版图交付的文件格式？",
+   "back": "GDS2",
+   "tags": [
+    "第 27 章"
+   ]
+  },
+  {
+   "id": "f27-2",
+   "chapterId": "ch27",
+   "front": "单元库的三种来源？",
+   "back": "EDA 自带、流片厂提供、第三方商业库",
+   "tags": [
+    "第 27 章"
+   ]
+  },
+  {
+   "id": "f27-3",
+   "chapterId": "ch27",
+   "front": "光刻机的产业地位？",
+   "back": "工业皇冠上的明珠，ASML 占约 80%",
+   "tags": [
+    "第 27 章"
+   ]
+  },
+  {
+   "id": "f27-4",
+   "chapterId": "ch27",
+   "front": "代工三强份额？",
+   "back": "台积电 >50%、三星约 20%、格方约 10%",
+   "tags": [
+    "第 27 章"
+   ]
+  },
+  {
+   "id": "f27-5",
+   "chapterId": "ch27",
+   "front": "制造成本三构成？",
+   "back": "晶片、测试、封装",
+   "tags": [
+    "第 27 章"
+   ]
+  },
+  {
+   "id": "f27-6",
+   "chapterId": "ch27",
+   "front": "\"低端保护高端\"指什么？",
+   "back": "用极低价低端产品封死后来者的价格空间",
+   "tags": [
+    "第 27 章"
+   ]
+  },
+  {
+   "id": "f28-1",
+   "chapterId": "ch28",
+   "front": "FPGA 的全称？",
+   "back": "现场可编程逻辑门阵列",
+   "tags": [
+    "第 28 章"
+   ]
+  },
+  {
+   "id": "f28-2",
+   "chapterId": "ch28",
+   "front": "在 FPGA 上跑通 CPU 意味着什么？",
+   "back": "前端设计达到重要里程碑",
+   "tags": [
+    "第 28 章"
+   ]
+  },
+  {
+   "id": "f28-3",
+   "chapterId": "ch28",
+   "front": "龙芯团队现在主用的模拟器？",
+   "back": "qemu",
+   "tags": [
+    "第 28 章"
+   ]
+  },
+  {
+   "id": "f28-4",
+   "chapterId": "ch28",
+   "front": "SOI 的关键结构？",
+   "back": "衬底上的超薄埋氧层",
+   "tags": [
+    "第 28 章"
+   ]
+  },
+  {
+   "id": "f28-5",
+   "chapterId": "ch28",
+   "front": "FinFET 与 GAA 的发明人？",
+   "back": "胡正明",
+   "tags": [
+    "第 28 章"
+   ]
+  },
+  {
+   "id": "f28-6",
+   "chapterId": "ch28",
+   "front": "GAA 的含义？",
+   "back": "全环绕栅极晶体管",
+   "tags": [
+    "第 28 章"
+   ]
+  },
+  {
+   "id": "f29-1",
+   "chapterId": "ch29",
+   "front": "上古与战国的分界？",
+   "back": "1971 年 Intel 4004",
+   "tags": [
+    "第 29 章"
+   ]
+  },
+  {
+   "id": "f29-2",
+   "chapterId": "ch29",
+   "front": "70 年代四款经典 8 位处理器？",
+   "back": "Intel 8080、MOS 6502、Motorola MC6800、Zilog Z80",
+   "tags": [
+    "第 29 章"
+   ]
+  },
+  {
+   "id": "f29-3",
+   "chapterId": "ch29",
+   "front": "史上销量最高的个人计算机？",
+   "back": "Commodore 64，用 6502",
+   "tags": [
+    "第 29 章"
+   ]
+  },
+  {
+   "id": "f29-4",
+   "chapterId": "ch29",
+   "front": "Alpha 处理器的结局？",
+   "back": "1998 年 DEC 被康柏收购后终止研发",
+   "tags": [
+    "第 29 章"
+   ]
+  },
+  {
+   "id": "f29-5",
+   "chapterId": "ch29",
+   "front": "Cyrix 的归宿？",
+   "back": "1999 年被威盛收购",
+   "tags": [
+    "第 29 章"
+   ]
+  },
+  {
+   "id": "f29-6",
+   "chapterId": "ch29",
+   "front": "现存的两大生态？",
+   "back": "x86 与 ARM",
+   "tags": [
+    "第 29 章"
+   ]
+  },
+  {
+   "id": "f30-1",
+   "chapterId": "ch30",
+   "front": "Intel 生态的三处兼容？",
+   "back": "x86 指令集、开放的 PC 整机标准、Windows 向下兼容",
+   "tags": [
+    "第 30 章"
+   ]
+  },
+  {
+   "id": "f30-2",
+   "chapterId": "ch30",
+   "front": "AMD 两次关键领先？",
+   "back": "先破 1GHz、先推 64 位（另有真双核）",
+   "tags": [
+    "第 30 章"
+   ]
+  },
+  {
+   "id": "f30-3",
+   "chapterId": "ch30",
+   "front": "ARM 的前身？",
+   "back": "1978 年成立的英国 Acorn",
+   "tags": [
+    "第 30 章"
+   ]
+  },
+  {
+   "id": "f30-4",
+   "chapterId": "ch30",
+   "front": "苹果 A14 的关键参数？",
+   "back": "5nm、118 亿晶体管、6 核 CPU",
+   "tags": [
+    "第 30 章"
+   ]
+  },
+  {
+   "id": "f30-5",
+   "chapterId": "ch30",
+   "front": "IBM 的四条 CPU 产品线？",
+   "back": "z 系列、Power、PowerPC、Cell",
+   "tags": [
+    "第 30 章"
+   ]
+  },
+  {
+   "id": "f30-6",
+   "chapterId": "ch30",
+   "front": "Cell 的结构？",
+   "back": "1 个 Power4 主核 + 8 个协处理器",
+   "tags": [
+    "第 30 章"
+   ]
+  },
+  {
+   "id": "f31-1",
+   "chapterId": "ch31",
+   "front": "MIPS 的创始人？",
+   "back": "约翰·亨利斯团队，1984 年",
+   "tags": [
+    "第 31 章"
+   ]
+  },
+  {
+   "id": "f31-2",
+   "chapterId": "ch31",
+   "front": "MIPS 衰落的主要原因？",
+   "back": "桌面与服务器被 x86 挤压、嵌入式输给 ARM、错过移动",
+   "tags": [
+    "第 31 章"
+   ]
+  },
+  {
+   "id": "f31-3",
+   "chapterId": "ch31",
+   "front": "RISC-V 的两位关键人物？",
+   "back": "大卫·帕特森与约翰·亨利斯（合作教材）",
+   "tags": [
+    "第 31 章"
+   ]
+  },
+  {
+   "id": "f31-4",
+   "chapterId": "ch31",
+   "front": "RISC-V 的生态理念？",
+   "back": "自由开放，免授权费",
+   "tags": [
+    "第 31 章"
+   ]
+  },
+  {
+   "id": "f31-5",
+   "chapterId": "ch31",
+   "front": "日本 TRON 项目的结局？",
+   "back": "被迫放弃 PC 正面竞争，限用于嵌入式",
+   "tags": [
+    "第 31 章"
+   ]
+  },
+  {
+   "id": "f31-6",
+   "chapterId": "ch31",
+   "front": "三星移动处理器系列名？",
+   "back": "Exynos（猎户座）",
+   "tags": [
+    "第 31 章"
+   ]
+  },
+  {
+   "id": "f32-1",
+   "chapterId": "ch32",
+   "front": "CPU 生态的定义？",
+   "back": "围绕某 CPU 的全部资源与上下游集合",
+   "tags": [
+    "第 32 章"
+   ]
+  },
+  {
+   "id": "f32-2",
+   "chapterId": "ch32",
+   "front": "软件生态的定义？",
+   "back": "某 CPU 能运行的所有软件的集合",
+   "tags": [
+    "第 32 章"
+   ]
+  },
+  {
+   "id": "f32-3",
+   "chapterId": "ch32",
+   "front": "为什么 CPU 本身没有使用价值？",
+   "back": "它只是元器件，需软件才提供服务",
+   "tags": [
+    "第 32 章"
+   ]
+  },
+  {
+   "id": "f32-4",
+   "chapterId": "ch32",
+   "front": "三种接口公式？",
+   "back": "应用软件接口 = {ISA, System Call, API}",
+   "tags": [
+    "第 32 章"
+   ]
+  },
+  {
+   "id": "f32-5",
+   "chapterId": "ch32",
+   "front": "龙芯系统软件团队成立时间？",
+   "back": "2013 年",
+   "tags": [
+    "第 32 章"
+   ]
+  },
+  {
+   "id": "f32-6",
+   "chapterId": "ch32",
+   "front": "生态架构的层次？",
+   "back": "操作系统 → API → 应用软件，旁挂外设",
+   "tags": [
+    "第 32 章"
+   ]
+  },
+  {
+   "id": "f33-1",
+   "chapterId": "ch33",
+   "front": "两类开发者？",
+   "back": "系统软件开发者与应用软件开发者",
+   "tags": [
+    "第 33 章"
+   ]
+  },
+  {
+   "id": "f33-2",
+   "chapterId": "ch33",
+   "front": "中国 API 开发者规模？",
+   "back": "从事编译器等工作的人不到千人",
+   "tags": [
+    "第 33 章"
+   ]
+  },
+  {
+   "id": "f33-3",
+   "chapterId": "ch33",
+   "front": "Linux 发行版的产出形式？",
+   "back": "一张安装光盘/镜像",
+   "tags": [
+    "第 33 章"
+   ]
+  },
+  {
+   "id": "f33-4",
+   "chapterId": "ch33",
+   "front": "虚拟机型语言举例？",
+   "back": "Java、.Net、JavaScript、Python",
+   "tags": [
+    "第 33 章"
+   ]
+  },
+  {
+   "id": "f33-5",
+   "chapterId": "ch33",
+   "front": "本地编译型语言举例？",
+   "back": "汇编、C/C++、Fortran、Pascal",
+   "tags": [
+    "第 33 章"
+   ]
+  },
+  {
+   "id": "f33-6",
+   "chapterId": "ch33",
+   "front": "\"解决方案为王\"的含义？",
+   "back": "对方案的控制力决定利润分配",
+   "tags": [
+    "第 33 章"
+   ]
+  },
+  {
+   "id": "f34-1",
+   "chapterId": "ch34",
+   "front": "兼容靠什么约束？",
+   "back": "标准规范",
+   "tags": [
+    "第 34 章"
+   ]
+  },
+  {
+   "id": "f34-2",
+   "chapterId": "ch34",
+   "front": "Linux 内核社区 2019 年的提交规模？",
+   "back": "74000 余次，4189 名程序员",
+   "tags": [
+    "第 34 章"
+   ]
+  },
+  {
+   "id": "f34-3",
+   "chapterId": "ch34",
+   "front": "ARM 的授权收费方式？",
+   "back": "购买使用权一次，每片芯片再收一次",
+   "tags": [
+    "第 34 章"
+   ]
+  },
+  {
+   "id": "f34-4",
+   "chapterId": "ch34",
+   "front": "\"一流企业做什么\"？",
+   "back": "做标准（知识产权）",
+   "tags": [
+    "第 34 章"
+   ]
+  },
+  {
+   "id": "f34-5",
+   "chapterId": "ch34",
+   "front": "ARM 芯片累计出货量（1991—2020）？",
+   "back": "1600 亿颗",
+   "tags": [
+    "第 34 章"
+   ]
+  },
+  {
+   "id": "f34-6",
+   "chapterId": "ch34",
+   "front": "深度系统在龙芯上首批上架应用数？",
+   "back": "400 款",
+   "tags": [
+    "第 34 章"
+   ]
+  },
+  {
+   "id": "f35-1",
+   "chapterId": "ch35",
+   "front": "中国台式机与服务器占全球市场比例？",
+   "back": "约 20% 与 30%",
+   "tags": [
+    "第 35 章"
+   ]
+  },
+  {
+   "id": "f35-2",
+   "chapterId": "ch35",
+   "front": "2019 年前 7 个月 CPU 进口额？",
+   "back": "470 亿元，其中美国来源超 320 亿元",
+   "tags": [
+    "第 35 章"
+   ]
+  },
+  {
+   "id": "f35-3",
+   "chapterId": "ch35",
+   "front": "两条技术路线？",
+   "back": "市场换技术与市场带技术",
+   "tags": [
+    "第 35 章"
+   ]
+  },
+  {
+   "id": "f35-4",
+   "chapterId": "ch35",
+   "front": "中国计算机三个阶段？",
+   "back": "全自研、全市场化、市场化下重掌自主",
+   "tags": [
+    "第 35 章"
+   ]
+  },
+  {
+   "id": "f35-5",
+   "chapterId": "ch35",
+   "front": "DJS-050 兼容哪款芯片？",
+   "back": "Intel 8080",
+   "tags": [
+    "第 35 章"
+   ]
+  },
+  {
+   "id": "f35-6",
+   "chapterId": "ch35",
+   "front": "曙光一号用的是什么处理器？",
+   "back": "Motorola M88100",
+   "tags": [
+    "第 35 章"
+   ]
+  },
+  {
+   "id": "f36-1",
+   "chapterId": "ch36",
+   "front": "龙芯起源年份与单位？",
+   "back": "2001 年，中科院计算所微处理器团队",
+   "tags": [
+    "第 36 章"
+   ]
+  },
+  {
+   "id": "f36-2",
+   "chapterId": "ch36",
+   "front": "龙芯第一款产品芯片？",
+   "back": "龙芯 2F",
+   "tags": [
+    "第 36 章"
+   ]
+  },
+  {
+   "id": "f36-3",
+   "chapterId": "ch36",
+   "front": "三个系列的定位？",
+   "back": "1 号嵌入式、2 号工控、3 号桌面服务器",
+   "tags": [
+    "第 36 章"
+   ]
+  },
+  {
+   "id": "f36-4",
+   "chapterId": "ch36",
+   "front": "3A4000 的主频与核数？",
+   "back": "1.8—2.0GHz，4 核",
+   "tags": [
+    "第 36 章"
+   ]
+  },
+  {
+   "id": "f36-5",
+   "chapterId": "ch36",
+   "front": "3A5000 的 SPEC 提升幅度？",
+   "back": "50% 以上",
+   "tags": [
+    "第 36 章"
+   ]
+  },
+  {
+   "id": "f36-6",
+   "chapterId": "ch36",
+   "front": "\"性能补课\"主要补什么？",
+   "back": "设计能力",
+   "tags": [
+    "第 36 章"
+   ]
+  },
+  {
+   "id": "f37-1",
+   "chapterId": "ch37",
+   "front": "创新函数的第四个变量？",
+   "back": "时间",
+   "tags": [
+    "第 37 章"
+   ]
+  },
+  {
+   "id": "f37-2",
+   "chapterId": "ch37",
+   "front": "LoongArch 的五个组成部分？",
+   "back": "Base、LVZ、LBT、LSX、LASX",
+   "tags": [
+    "第 37 章"
+   ]
+  },
+  {
+   "id": "f37-3",
+   "chapterId": "ch37",
+   "front": "Loongnix 是什么？",
+   "back": "龙芯维护的社区版 Linux 发行版",
+   "tags": [
+    "第 37 章"
+   ]
+  },
+  {
+   "id": "f37-4",
+   "chapterId": "ch37",
+   "front": "统一架构规范约束什么？",
+   "back": "主板与操作系统之间的所有接口",
+   "tags": [
+    "第 37 章"
+   ]
+  },
+  {
+   "id": "f37-5",
+   "chapterId": "ch37",
+   "front": "内生安全四类机制？",
+   "back": "漏洞防范、国密硬件、可信计算、访问控制",
+   "tags": [
+    "第 37 章"
+   ]
+  },
+  {
+   "id": "f37-6",
+   "chapterId": "ch37",
+   "front": "勒索病毒案例的结果？",
+   "back": "15 台 Windows 崩溃，3 台龙芯正常",
+   "tags": [
+    "第 37 章"
+   ]
+  },
+  {
+   "id": "f38-1",
+   "chapterId": "ch38",
+   "front": "泛生态六支柱？",
+   "back": "标准规范、开源软件、解决方案、产品认证、人才培养、书籍出版",
+   "tags": [
+    "第 38 章"
+   ]
+  },
+  {
+   "id": "f38-2",
+   "chapterId": "ch38",
+   "front": "龙芯 Java 虚拟机提交量排名？",
+   "back": "世界第四",
+   "tags": [
+    "第 38 章"
+   ]
+  },
+  {
+   "id": "f38-3",
+   "chapterId": "ch38",
+   "front": "申威 26010 的浮点峰值？",
+   "back": "3.168×10¹² 次/秒",
+   "tags": [
+    "第 38 章"
+   ]
+  },
+  {
+   "id": "f38-4",
+   "chapterId": "ch38",
+   "front": "海思的两条产品线？",
+   "back": "麒麟（手机）与鲲鹏（桌面/服务器）",
+   "tags": [
+    "第 38 章"
+   ]
+  },
+  {
+   "id": "f38-5",
+   "chapterId": "ch38",
+   "front": "运十终止与 C919 首飞的年份？",
+   "back": "1986 与 2017",
+   "tags": [
+    "第 38 章"
+   ]
+  },
+  {
+   "id": "f38-6",
+   "chapterId": "ch38",
+   "front": "龙芯下一步三件事？",
+   "back": "坚持路线、进入性能新阶段、应用迁移攻坚",
+   "tags": [
+    "第 38 章"
+   ]
+  }
+ ]
+}
